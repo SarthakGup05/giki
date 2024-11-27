@@ -1,0 +1,60 @@
+/* OurTeam.css */
+.team-member {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .team-member:hover {
+    transform: translateY(-10px);
+  }
+  
+  .team-member img {
+    width: 100%;
+    max-width: 768px;
+    height: auto;
+    border-bottom: 2px solid #ffc31e;
+  }
+  
+  .team-member-info {
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .team-member-info h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .team-member-info h3::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffc31e;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .team-member-info h3:hover::after,
+  .team-member-info h3:focus::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .team-member-info p {
+    margin: 0.5rem 0;
+    color: #555;
+  }
+  

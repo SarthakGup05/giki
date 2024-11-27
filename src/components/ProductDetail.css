@@ -1,0 +1,32 @@
+/* ProductDetail.css */
+
+.react-tabs__tab--selected {
+    border-color: #ff9900;
+    color: #ffaa00;
+  }
+
+  react-tabs__tab--selected {
+    /* background: #fff; */
+    border-color: #aaa;
+    color: black;
+    border-radius: 5px 5px 0 0;
+  }
+  
+ 
+  .active-tab:hover {
+    color: #ff1e1e00;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

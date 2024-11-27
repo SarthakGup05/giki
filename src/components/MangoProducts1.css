@@ -1,0 +1,97 @@
+/* Slider Container */
+.banner-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .slide.active {
+    opacity: 1;
+    position: relative;
+  }
+  
+  .slide-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .brand-logo {
+    height: 3rem;
+    margin-right: 1rem;
+  }
+  
+  .slide-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .slide-description {
+    font-size: 1rem;
+  }
+  
+  /* Responsive Styles */
+  @media (min-width: 640px) {
+    .brand-logo {
+      height: 4rem;
+    }
+  
+    .slide-title {
+      font-size: 2.5rem;
+    }
+  
+    .slide-description {
+      font-size: 1.25rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .brand-logo {
+      height: 5rem;
+    }
+  
+    .slide-title {
+      font-size: 3rem;
+    }
+  
+    .slide-description {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .brand-logo {
+      height: 6rem;
+    }
+  
+    .slide-title {
+      font-size: 3.5rem;
+    }
+  
+    .slide-description {
+      font-size: 1.75rem;
+    }
+  }
+  

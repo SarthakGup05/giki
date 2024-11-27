@@ -1,0 +1,23 @@
+# Allow all bots to crawl the site
+User-agent: *
+
+# Specify the sitemap
+Sitemap: https://www.gikijoy.com/sitemap.xml
+
+# Allow access to the main content
+Allow: /
+
+# Disallow crawling of unnecessary paths
+Disallow: /static/
+Disallow: /admin/
+Disallow: /login/
+Disallow: /sign-up/
+Disallow: /api/
+
+# Block specific file extensions (optional)
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.json$
+
+# Prevent indexing of query parameters (optional)
+Disallow: /*?*

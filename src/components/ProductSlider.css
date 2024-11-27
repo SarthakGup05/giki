@@ -1,0 +1,20 @@
+.custom-arrow {
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  
+  .left-arrow {
+    left: -25px;
+  }
+  
+  .right-arrow {
+    right: -25px;
+  }
+  
+ 
+  
