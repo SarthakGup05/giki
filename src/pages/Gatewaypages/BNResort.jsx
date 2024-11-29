@@ -104,15 +104,12 @@ const BNResort = () => {
                 key={index}
                 className="activity-card bg-gradient-to-r from-blue-50 via-white to-blue-50 p-6 rounded-lg shadow-lg flex flex-col items-center text-center space-y-4 hover:shadow-2xl hover:scale-105 transition-transform"
               >
-                {/* Icon */}
                 <div className="icon-wrapper bg-gradient-to-r from-gray-100 to-gray-300 p-4 rounded-full shadow-inner">
                   {activity.icon}
                 </div>
-                {/* Title */}
                 <h4 className="text-xl font-semibold text-gray-800">
                   {activity.title}
                 </h4>
-                {/* Description */}
                 <p className="text-gray-600 text-sm">{activity.description}</p>
               </div>
             ))}

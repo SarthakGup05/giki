@@ -15,7 +15,6 @@ import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 import Banner from "../../components/Utils/Banner";
 import UkBanner from "/assets/images/page banner/home-banner2.jpg";
-import BNResort from "./BNResort";
 import Modal from "../../components/Utils/Modal";
 import BookingForm from "../../components/Utils/BookingForm";
 
@@ -25,6 +24,7 @@ const Ranikhet = () => {
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
   const propertyData = {
     title: "Sukoon Nature Retreat",
     description:
@@ -64,10 +64,7 @@ const Ranikhet = () => {
       { src: "/assets/images/sukoon nature/1.jpg", alt: "Ranikhet Property 1" },
       { src: "/assets/images/sukoon nature/6.jpg", alt: "Ranikhet Property 2" },
       { src: "/assets/images/sukoon nature/3.jpg", alt: "Ranikhet Property 3" },
-      {
-        src: "/assets/images/sukoon nature/5.jpeg",
-        alt: "Ranikhet Property 4",
-      },
+      { src: "/assets/images/sukoon nature/5.jpeg", alt: "Ranikhet Property 4" },
       { src: "/assets/images/sukoon nature/7.jpg", alt: "Ranikhet Property 5" },
     ],
   };
@@ -83,54 +80,51 @@ const Ranikhet = () => {
   return (
     <>
       <Banner image={UkBanner} />
-      <div className="container mx-auto p-6 space-y-10">
+      <div className="container mx-auto p-4 md:p-6 space-y-8">
         {/* About Section */}
-        <div className="additional-about flex flex-col md:flex-row bg-gradient-to-r from-white via-gray-100 to-white p-8 rounded-xl shadow-lg mb-8">
-          <div className="flex-1 flex flex-col justify-center md:pr-8 space-y-4 font-semibold">
-            <h3 className="text-4xl font-bold text-gray-800">
+        <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg shadow-lg">
+          <div className="flex-1 space-y-4">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-800">
               {property.title}
             </h3>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-600">
               {property.description}
             </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-600">
               {property.additionalDescription}
             </p>
             <button
               onClick={toggleModal}
-              className="px-6 py-3 bg-yellow-500 text-white rounded-lg shadow hover:bg-yellow-600 transition"
+              className="px-4 py-2 md:px-6 md:py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition"
             >
               Book Now
             </button>
           </div>
-          <div className="flex-1 flex items-center justify-center mt-6 md:mt-0 md:pl-8">
+          <div className="flex-1 mt-6 md:mt-0">
             <img
               src={property.images[0]?.src}
               alt="About Property"
-              className="w-full h-80 md:h-full object-cover rounded-xl shadow-md"
+              className="w-full h-64 md:h-80 object-cover rounded-lg shadow-md"
             />
           </div>
         </div>
 
         {/* Highlights Section */}
-        <div className="things-to-do mt-10">
-          <div className="flex justify-center items-center space-x-4 mb-6">
-            <h3 className="text-3xl font-bold text-gray-800">Things to Do</h3>
-          </div>
-          <div className="highlights grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div>
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-6">
+            Things to Do
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {property.highlights.map((highlight, index) => (
               <div
                 key={index}
-                className="highlight-item bg-white p-4 rounded-lg shadow-lg flex flex-col items-center"
+                className="p-4 bg-gray-50 rounded-lg shadow hover:shadow-md transition"
               >
-                {/* Icon for Highlight */}
-                <div className="mb-4">{highlight.icon}</div>
-                {/* Title of Highlight */}
-                <h4 className="text-xl font-bold text-gray-800 mb-2">
+                <div className="flex justify-center mb-4">{highlight.icon}</div>
+                <h4 className="text-lg md:text-xl font-bold text-gray-700 text-center">
                   {highlight.title}
                 </h4>
-                {/* Description of Highlight */}
-                <p className="text-gray-600 text-sm text-center">
+                <p className="text-sm md:text-base text-gray-600 mt-2 text-center">
                   {highlight.description}
                 </p>
               </div>
@@ -139,53 +133,37 @@ const Ranikhet = () => {
         </div>
 
         {/* Image Gallery */}
-        <div className="hero p-0 rounded-xl shadow-2xl overflow-hidden">
-          <LightGallery
-            plugins={[lgZoom, lgThumbnail]}
-            elementClassNames="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-          >
-            {property.images.map((image, index) => (
-              <a
-                key={index}
-                href={image.src}
-                className="gallery-item transform hover:scale-105"
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-72 object-cover shadow-md"
-                />
-              </a>
-            ))}
+        <div>
+          <LightGallery plugins={[lgZoom, lgThumbnail]}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {property.images.map((image, index) => (
+                <a key={index} href={image.src}>
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-48 md:h-64 object-cover rounded-lg"
+                  />
+                </a>
+              ))}
+            </div>
           </LightGallery>
         </div>
 
         {/* Location Section */}
-        <div className="location mt-8 flex items-center space-x-4">
+        <div className="mt-8 flex items-center space-x-4">
           <FaMapMarkerAlt className="text-3xl text-blue-500" />
           <div>
-            <h3 className="text-2xl font-semibold">{property.locationText}</h3>
-            <p className="text-lg text-gray-700">{property.locationDetail}</p>
+            <h3 className="text-lg md:text-xl font-semibold">
+              {property.locationText}
+            </h3>
+            <p className="text-sm md:text-base text-gray-600">
+              {property.locationDetail}
+            </p>
           </div>
-        </div>
-
-        {/* Floating Contact Buttons */}
-        <div className="fixed bottom-8 right-8 flex flex-col space-y-4">
-          {/* <a
-            href={`https://wa.me/${property.whatsappNumber}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-green-500 text-white p-4 rounded-full hover:bg-green-600 transition transform hover:scale-110 shadow-lg flex items-center"
-          >
-            <FaWhatsapp size={20} />
-          </a> */}
         </div>
       </div>
 
-      {/* Horizontal Line */}
-      <hr className="my-8 border-t-2 border-gray-300 mt-9" />
-
-      {/* BNResort Section */}
+      {/* Booking Modal */}
       <Modal isOpen={isModalOpen} closeModal={toggleModal}>
         <BookingForm />
       </Modal>
