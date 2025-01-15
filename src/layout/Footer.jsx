@@ -56,10 +56,10 @@ const Footer = () => {
 
           {/* Destinations */}
           <div>
-            <h5 className="text-xl font-bold mb-4">GikiJoy Getaway</h5>
+            <h5 className="text-xl font-bold mb-4">GikiJoy Getaways</h5>
             <ul>
               <li className="mb-2">
-                <Link className="underline-transition text-white font-medium" to="/gikijoy-getaway/uttrakhand">
+                <Link className="underline-transition text-white font-medium" to="/gikijoy-getaway/uttarakhand">
                   Uttarakhand
                 </Link>
               </li>

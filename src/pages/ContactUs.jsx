@@ -15,7 +15,7 @@ const ContactUs = () => {
                   <i className="fa-solid fa-location-dot"></i>
                 </span>
                 <p className="flex-1">
-                  1/523 GiaMau, HAZRATGUNJ LUCKNOW <br /> 226001 Uttar Pradesh
+                  1/523 JiaMau, HAZRATGUNJ LUCKNOW <br /> 226001 Uttar Pradesh
                 </p>
               </div>
               <div className="flex flex-wrap items-center mb-8">
@@ -26,17 +26,17 @@ const ContactUs = () => {
                   kirti@Gikijoy.com
                 </a>
               </div>
-              {/* <div className="flex flex-wrap items-center">
+              <div className="flex flex-wrap items-center">
                 <span className="text-dark text-4xl mr-5">
                   <i className="fa-solid fa-phone"></i>
                 </span>
                 <a
                   className="flex-1"
-                  href="tel:01234567890"
+                  href="tel:+91 7817821976"
                 >
-                  +1 35 776 859 011 / +1 35 776 859 011
+                  +91 7817821976
                 </a>
-              </div> */}
+              </div>
             </div>
             <div className="p-10 lg:p-14 shadow mt-14 lg:mt-0">
               <form action="#" id="contact-form" method="get">

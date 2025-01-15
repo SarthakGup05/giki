@@ -11,7 +11,7 @@ const getaways = [
     title: "Uttarakhand",
     description: "Nestled in the serene Himalayas, ideal for nature lovers and adventure seekers.",
     image: "/assets/images/SliderImages/ranikhet.jpg",
-    route: "/gikijoy-getaway/uttrakhand",
+    route: "/gikijoy-getaway/uttarakhand",
   },
   {
     id: 2,

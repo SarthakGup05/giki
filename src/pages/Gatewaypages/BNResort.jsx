@@ -86,9 +86,9 @@ const BNResort = () => {
           </div>
           <div className="flex-1 flex items-center justify-center mt-6 md:mt-0 md:pl-8">
             <img
-              src={property.images[0]?.src}
+              src="\assets\images\BnResort\main.jpg"
               alt="About Property"
-              className="w-full h-80 md:h-full object-cover rounded-xl shadow-md"
+              className="w-[580px] h-80 md:h-full sm:w-96 object-contain rounded-xl shadow-md"
             />
           </div>
         </div>

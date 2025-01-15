@@ -8,7 +8,7 @@ const Uttrakhandp = [
     description:
       "Ayurvedic treatments in a peaceful environment, linked to the Baba Haidakhan.",
     imgSrc: "/assets/images/grids/uk/baba ayurveda.png",
-    route: "/gikijoy-getaway/uttrakhand/babajiayurveda",
+    route: "/gikijoy-getaway/uttarakhand/babajiayurveda",
   },
   {
     id: 1,
@@ -16,15 +16,15 @@ const Uttrakhandp = [
     description:
       "Peaceful retreat in Ranikhet, surrounded by lush greenery, perfect for relaxation.",
     imgSrc: "/assets/images/sukoon nature/6.jpg",
-    route: "/gikijoy-getaway/uttrakhand/sukoon",
+    route: "/gikijoy-getaway/uttarakhand/sukoon",
   },
   {
     id: 2,
     title: "BN Resort",
     description:
       "Luxury resort with stunning architecture and landscapes, perfect for a peaceful, high-end retreat.",
-    imgSrc: "/assets/images/BnResort/3.jpg",
-    route: "/gikijoy-getaway/uttrakhand/bn",
+    imgSrc: "/assets/images/BnResort/_DSC2338.jpg",
+    route: "/gikijoy-getaway/uttarakhand/bn",
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const Uttrakhandp = [
     description:
       "Serene retreat surrounded by oaks, deodars, and a beautiful lake, ideal for nature lovers.",
     imgSrc: "/assets/images/grids/uk/ashdale.jpg",
-    route: "/gikijoy-getaway/uttrakhand/ashdale",
+    route: "/gikijoy-getaway/uttarakhand/ashdale",
   },
   {
     id: 4,
@@ -40,7 +40,7 @@ const Uttrakhandp = [
     description:
       "Tranquil getaway surrounded by nature, offering comfort and peace for families and travelers.",
     imgSrc: "/assets/images/fern cottage/1.jpg",
-    route: "/gikijoy-getaway/uttrakhand/fern",
+    route: "/gikijoy-getaway/uttarakhand/fern",
   },
 ];
 

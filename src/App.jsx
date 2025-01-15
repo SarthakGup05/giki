@@ -25,7 +25,7 @@ import RouteCards from "./components/RouteCards";
 import TravelGrid from "./components/Gikijoy gateways/TravelGrid";
 import { List } from "@chakra-ui/react";
 import listingData from "./app/ListingData";
-import Uttrakhand from "./pages/Gatewaypages/Grids/Uttrakhand";
+import Uttrakhand from "./pages/Gatewaypages/Grids/Uttarakhand";
 import Ashdale from "./pages/Gatewaypages/Ashdale";
 import Goa from "./pages/Gatewaypages/Grids/Goa";
 import AquaBeach from "./pages/Gatewaypages/AquaBeach";
@@ -124,17 +124,17 @@ function AppContent() {
           <Route path="/gikijoy-getaway" element={<Gateway />} />
           <Route path="/gikijoy-getaway/goa/jungle-villa" element={<JungleVilla />} />
           <Route
-            path="/gikijoy-getaway/uttrakhand/sukoon"
+            path="/gikijoy-getaway/uttarakhand/sukoon"
             element={<Ranikhet />}
           />
           <Route path="/gikijoy-getaway/punjab" element={<ChahalFarms />} />
-          <Route path="/gikijoy-getaway/uttrakhand/bn" element={<BNResort />} />
-          <Route path="/gikijoy-getaway/uttrakhand/ashdale" element={<Ashdale />} />
-          <Route path="/gikijoy-getaway/uttrakhand/fern" element={<FernCottage />} />
-          <Route path="/gikijoy-getaway/uttrakhand/babajiayurveda" element={<BabaAyurveda />} />
+          <Route path="/gikijoy-getaway/uttarakhand/bn" element={<BNResort />} />
+          <Route path="/gikijoy-getaway/uttarakhand/ashdale" element={<Ashdale />} />
+          <Route path="/gikijoy-getaway/uttarakhand/fern" element={<FernCottage />} />
+          <Route path="/gikijoy-getaway/uttarakhand/babajiayurveda" element={<BabaAyurveda />} />
         
           <Route path="/gikijoy-getaway/goa/aquabeach" element={<AquaBeach />} />
-          <Route path="/gikijoy-getaway/uttrakhand" element={<Uttrakhand />} />
+          <Route path="/gikijoy-getaway/uttarakhand" element={<Uttrakhand />} />
           <Route path="/gikijoy-getaway/goa" element={<Goa />} />
           <Route path="/gikijoy-getaway/thankyou" element={<ThankYou />} />
         </Routes>
