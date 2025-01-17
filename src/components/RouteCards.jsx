@@ -18,6 +18,13 @@ const routes = [
     image: "/assets/images/SliderImages/mangoFarm.jpg",
     route: "/gikijoy-farm",
   },
+  {
+    id: 3,
+    title: "Param Aqua Farms",
+    description: "Experience the beauty of aqua farming with fresh seafood.",
+    image: "/assets/images/Aqua farms/aq farm.jpg",
+    route: "/param-aqua-farm",
+  },
 ];
 
 const RouteCards = () => {

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Footer from "./layout/Footer";
 import Navbar from "./layout/Nav";
 import GatewayNavbar from "./layout/gatewaysLayout";
+import AquaNavbar from "./layout/AquaNav";
 import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/Aboutus";
 import Home from "./pages/Home";
@@ -30,8 +31,9 @@ import Ashdale from "./pages/Gatewaypages/Ashdale";
 import Goa from "./pages/Gatewaypages/Grids/Goa";
 import AquaBeach from "./pages/Gatewaypages/AquaBeach";
 import FernCottage from "./pages/Gatewaypages/FernCottage";
-import BabaAyurveda  from "./pages/Gatewaypages/BabaAyurveda";
+import BabaAyurveda from "./pages/Gatewaypages/BabaAyurveda";
 import ThankYou from "./pages/Gatewaypages/ThankYou";
+import Aquafarms from "./AquaFarms/Components/pages/Aquafarms";
 
 // Initialize AOS animations
 AOS.init();
@@ -39,14 +41,24 @@ AOS.init();
 function AppContent() {
   const location = useLocation();
 
-  // Check if the route starts with "/gikijoy-getaway" or is "/"
-  const isGatewayRoute =
-    location.pathname.startsWith("/gikijoy-getaway") || location.pathname === "/";
+  // Determine which navbar to display based on the route
+  const isGatewayRoute = location.pathname.startsWith("/gikijoy-getaway");
+  const isAquaFarmRoute =
+    location.pathname.startsWith("/param-aqua-farm") ||
+    location.pathname === "/";
 
   return (
     <div>
-      {/* Display the correct navbar based on the route */}
-      {isGatewayRoute ? <GatewayNavbar /> : <Navbar />}
+      {/* Conditional Navbar Rendering */}
+      {location.pathname === "/" ? (
+        <GatewayNavbar />
+      ) : isGatewayRoute ? (
+        <GatewayNavbar />
+      ) : isAquaFarmRoute ? (
+        <AquaNavbar />
+      ) : (
+        <Navbar />
+      )}
 
       <main>
         <Routes>
@@ -122,21 +134,41 @@ function AppContent() {
 
           {/* GikiJoy Gateways Routes */}
           <Route path="/gikijoy-getaway" element={<Gateway />} />
-          <Route path="/gikijoy-getaway/goa/jungle-villa" element={<JungleVilla />} />
+          <Route
+            path="/gikijoy-getaway/goa/jungle-villa"
+            element={<JungleVilla />}
+          />
           <Route
             path="/gikijoy-getaway/uttarakhand/sukoon"
             element={<Ranikhet />}
           />
           <Route path="/gikijoy-getaway/punjab" element={<ChahalFarms />} />
-          <Route path="/gikijoy-getaway/uttarakhand/bn" element={<BNResort />} />
-          <Route path="/gikijoy-getaway/uttarakhand/ashdale" element={<Ashdale />} />
-          <Route path="/gikijoy-getaway/uttarakhand/fern" element={<FernCottage />} />
-          <Route path="/gikijoy-getaway/uttarakhand/babajiayurveda" element={<BabaAyurveda />} />
-        
-          <Route path="/gikijoy-getaway/goa/aquabeach" element={<AquaBeach />} />
+          <Route
+            path="/gikijoy-getaway/uttarakhand/bn"
+            element={<BNResort />}
+          />
+          <Route
+            path="/gikijoy-getaway/uttarakhand/ashdale"
+            element={<Ashdale />}
+          />
+          <Route
+            path="/gikijoy-getaway/uttarakhand/fern"
+            element={<FernCottage />}
+          />
+          <Route
+            path="/gikijoy-getaway/uttarakhand/babajiayurveda"
+            element={<BabaAyurveda />}
+          />
+          <Route
+            path="/gikijoy-getaway/goa/aquabeach"
+            element={<AquaBeach />}
+          />
           <Route path="/gikijoy-getaway/uttarakhand" element={<Uttrakhand />} />
           <Route path="/gikijoy-getaway/goa" element={<Goa />} />
           <Route path="/gikijoy-getaway/thankyou" element={<ThankYou />} />
+
+          {/* Aqua Farms Routes */}
+          <Route path="/param-aqua-farm" element={<Aquafarms />} />
         </Routes>
       </main>
 
@@ -145,8 +177,6 @@ function AppContent() {
     </div>
   );
 }
-
-
 
 function App() {
   return (
