@@ -14,8 +14,8 @@ const Navbar = () => {
     {
       title: "Products",
       subMenu: [
-        { title: "Mangoes", link: "/gikijoy-farm/mangoes" },
-        { title: "Cans", link: "/gikijoy-farm/tin-cans" },
+        { title: "Food Products", link: "/gikijoy-farm/food-products" },
+        // { title: "Cans", link: "/gikijoy-farm/tin-cans" },
         { title: "Corporate Gifts", link: "/gikijoy-farm/corporate-gifts" },
         { title: "Fragrances", link: "/gikijoy-farm" },
       ],

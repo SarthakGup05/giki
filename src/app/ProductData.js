@@ -131,64 +131,43 @@ const productData = {
       imgSrc: "/assets/images/mango shoot/GikiJoy Corporate Gifts/0H2A9792.JPG",
     },
   ],
+  candy: [
+    {
+      id: 1,
+      title: "Aamla Candy",
+      price: "₹299",
+      imgSrc: "/assets/images/MangoProduct/cover- ac1.png",
+      description: "Boosts immunity, rich in antioxidants, and good for skin and hair. Made from 100% natural ingredients with no artificial color or preservatives.",
+      netWeight: "200 gm",
+      ingredients: ["Amla berry", "Refined sugar"],
+      nutrition: {
+        calories: "315kcal",
+        totalFat: "0gm",
+        saturatedFat: "0gm",
+        transFat: "0gm",
+        sodium: "0mg",
+        totalCarbs: "77.9gm",
+        dietaryFiber: "5gm",
+        sugar: "5gm",
+        protein: "0.6gm",
+        vitaminC: "0mg",
+      },
+      storage: "Once open, refrigerate. Store in a dry and cool place.",
+      manufacturedBy: "GiKiJoy, 1/523 Jiamau, Hazratganj, Lucknow, Uttar Pradesh 226001",
+      email: "contactGikijoy@gmail.com",
+      gst: "09ABBFG3476E1ZF",
+      packagedOn: "10th Dec 2024",
+      useBefore: "12 months from the date of manufacture",
+      brand: "GiKiJoy",
+      isHealthy: true,
+    },
+   
+  ],
+
 };
 
 // src/data/listingData.js
-const listingData = [
-  {
-    id: 1,
-    title: "Mysa | Luxurious 2BHK | Entire apartment",
-    location: "Jaipur, India",
-    description: "Entire apartment in Jaipur, India",
-    details: "4 guests · 2 bedrooms · 2 beds · 2 bathrooms",
-    host: {
-      name: "Royal",
-      hostingDuration: "1 month hosting",
-      experience: "Exceptional check-in experience",
-      selfCheckIn: true,
-    },
-    pricePerNight: "₹2,339",
-    images: [
-      '/assets/images/property1/img1.jpg',
-      '/assets/images/property1/img2.jpg',
-      '/assets/images/property1/img3.jpg',
-      // Add more image paths
-    ],
-    reviews: [
-      { user: 'User1', rating: 5, comment: 'Amazing stay!' },
-      { user: 'User2', rating: 4, comment: 'Lovely place.' },
-      // Add more reviews
-    ],
-    outOfStock: false,
-  },
-  {
-    id: 2,
-    title: "Cozy Cottage in the Hills",
-    location: "Manali, India",
-    description: "Entire cottage in the hills, offering peace and serenity.",
-    details: "2 guests · 1 bedroom · 1 bed · 1 bathroom",
-    host: {
-      name: "Nature's Bliss",
-      hostingDuration: "3 months hosting",
-      experience: "Scenic surroundings and great amenities",
-      selfCheckIn: false,
-    },
-    pricePerNight: "₹1,599",
-    images: [
-      '/assets/images/property2/img1.jpg',
-      '/assets/images/property2/img2.jpg',
-      '/assets/images/property2/img3.jpg',
-      // Add more image paths
-    ],
-    reviews: [
-      { user: 'User3', rating: 5, comment: 'Peaceful and beautiful location.' },
-      { user: 'User4', rating: 4, comment: 'Perfect for a weekend getaway.' },
-      // Add more reviews
-    ],
-    outOfStock: false,
-  },
-  // Add more listings as needed
-];
+
 
 
 

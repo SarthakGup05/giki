@@ -10,7 +10,7 @@ const slides = [
     title: "Sustainable Aqua & Organic Farming",
     subtitle: "Where Nature Meets Innovation",
     description: "Experience our state-of-the-art aquaculture and organic farming practices, bringing you the finest produce while preserving our environment.",
-    image: "/assets/images/Aqua farms/services/Aqua farming.jpg",
+    image: "/assets/images/Aqua farms/services/aq.jpg",
     alt: "Aqua Farming",
     badge: "Eco-Friendly"
   },

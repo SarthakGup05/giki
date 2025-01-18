@@ -44,9 +44,30 @@ const mangoCansContent = [
     imgSrc: "/assets/images/GikiJoy Edited Sku Images/WhatsApp Image 2024-06-25 at 19.20.37_83e86e01.jpg",
   },
 ];
+const mangoCandyContent = [
+  {
+    id: 1, // Add unique id
+    title: "Aamla Candy",
+    price: "₹299",
+    imgSrc: "/assets/images/MangoProduct/cover- ac1.png",
+  },
+  // {
+  //   id: 2, // Add unique id
+  //   title: "Mango Can 2",
+  //   price: "₹399",
+  //   imgSrc: "/assets/images/GikiJoy Edited Sku Images/WhatsApp Image 2024-06-25 at 18.46.18_52223182.jpg",
+  // },
+  // {
+  //   id: 3, // Add unique id
+  //   title: "Mango Can 3",
+  //   price: "₹499",
+  //   imgSrc: "/assets/images/GikiJoy Edited Sku Images/WhatsApp Image 2024-06-25 at 19.20.37_83e86e01.jpg",
+  // },
+];
 const Mangoes = () => {
   const category1 = "mangoes"; // Define the category
   const category2 = "mango-cans"; // Define the category
+  const category3 = "candy"; // Define the category
 
   return (
     <div>
@@ -55,6 +76,8 @@ const Mangoes = () => {
         <ProductGrid products={mangoContent} category={category1} />
        <h2 className="text-3xl font-bold text-center mb-8">Mango Cans</h2>
             <ProductGrid products={mangoCansContent} category={category2} />
+            <h2 className="text-3xl font-bold text-center mb-8">Aamla Candy</h2>
+            <ProductGrid products={mangoCandyContent} category={category3} />
       </Layout>
     </div>
   );

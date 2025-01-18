@@ -108,7 +108,7 @@ function AppContent() {
             }
           />
           <Route
-            path="/gikijoy-farm/mangoes"
+            path="/gikijoy-farm/food-products"
             element={
               <Layout>
                 <Mangoes />

@@ -62,7 +62,7 @@ const AboutUsAqua = () => {
 
             <div className="space-y-4 text-gray-300">
               <p>
-                Since our establishment in 2010, Aqua Farms has been pioneering sustainable fish farming practices. Our state-of-the-art facility combines traditional wisdom with modern technology to produce the highest quality seafood while maintaining our commitment to environmental stewardship.
+                Since our establishment in 2020, Aqua Farms has been pioneering sustainable fish farming practices. Our state-of-the-art facility combines traditional wisdom with modern technology to produce the highest quality seafood while maintaining our commitment to environmental stewardship.
               </p>
 
               <p>
