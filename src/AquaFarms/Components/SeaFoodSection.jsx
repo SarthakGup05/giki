@@ -1,5 +1,6 @@
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const SeafoodSection = () => {
   const textRef = useRef(null);
@@ -14,18 +15,21 @@ const SeafoodSection = () => {
             key={i}
             className="absolute w-4 h-4 rounded-full bg-blue-400"
             initial={{
-              x: Math.random() * 100 + '%',
-              y: '100%',
+              x: Math.random() * 100 + "%",
+              y: "100%",
               scale: Math.random() * 2 + 1,
             }}
             animate={{
-              y: '-100%',
-              x: `${Math.sin(Math.random() * Math.PI * 2) * 10 + parseInt(Math.random() * 100)}%`,
+              y: "-100%",
+              x: `${
+                Math.sin(Math.random() * Math.PI * 2) * 10 +
+                parseInt(Math.random() * 100)
+              }%`,
             }}
             transition={{
               duration: Math.random() * 5 + 5,
               repeat: Infinity,
-              ease: 'linear',
+              ease: "linear",
             }}
           />
         ))}
@@ -56,7 +60,7 @@ const SeafoodSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 }}
             >
-              Exquisite Seafood,
+              Exquisite food,
               <br />
               <span className="text-blue-400">Expertly Served</span>
             </motion.h1>
@@ -67,8 +71,9 @@ const SeafoodSection = () => {
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: 0.6 }}
             >
-              Experience the finest selection of premium seafood, sourced daily
-              from sustainable fisheries and prepared by our master chefs with passion and precision.
+              Experience the finest selection of premium food, sourced daily
+              from sustainable fisheries and prepared by our master chefs with
+              passion and precision.
             </motion.p>
 
             <motion.div
@@ -76,16 +81,22 @@ const SeafoodSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.8 }}
             >
-              <motion.button
-                className="px-8 py-3 bg-blue-500 rounded-full font-medium hover:bg-blue-600 transition-colors text-sm md:text-lg shadow-lg"
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)',
-                }}
-                whileTap={{ scale: 0.95 }}
+              <a
+                href={`https://wa.me/7817821976`}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Book Now
-              </motion.button>
+                <motion.button
+                  className="px-8 py-3 bg-blue-500 rounded-full font-medium hover:bg-blue-600 transition-colors text-sm md:text-lg shadow-lg"
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Book Now
+                </motion.button>
+              </a>
             </motion.div>
           </motion.div>
 
@@ -118,7 +129,9 @@ const SeafoodSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 1 }}
             >
-              <span className="block font-bold text-xl md:text-2xl">Daily Fresh</span>
+              <span className="block font-bold text-xl md:text-2xl">
+                Daily Fresh
+              </span>
               <span className="text-sm">Ocean to Table</span>
             </motion.div>
 
@@ -128,7 +141,9 @@ const SeafoodSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 1.2 }}
             >
-              <span className="block font-bold text-xl md:text-2xl">Premium</span>
+              <span className="block font-bold text-xl md:text-2xl">
+                Premium
+              </span>
               <span className="text-sm">Quality Assured</span>
             </motion.div>
           </motion.div>

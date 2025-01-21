@@ -3,38 +3,46 @@ import { motion } from 'framer-motion';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useNavigate } from "react-router-dom";
+
 
 const slides = [
   {
     id: 1,
+    title: "Gikijoy Farms",
+    subtitle: "Experience the best of farm fruits.",
+    description: "Our aqua farms are designed to provide the best fruits and fruit product in the most sustainable way possible.",
+    image: "/assets/images/SliderImages/1.1.jpg",
+    alt: "Aqua Farming",
+    badge: "Eco-Friendly",
+    link: "/gikijoy-farm/food-products"
+  },
+  {
+    id: 2,
+    title: "Explore our new Aamla candy",
+    subtitle: "Aamla candy made from the best Aamla fruits.",
+    description: "Our Aamla candy is made from the best Aamla fruits from our farms.",
+    image: "/assets/images/SliderImages/amlabnnr.jpg",
+    alt: "Luxury Stays",
+    badge: "New Arrival",
+    link: "/gikijoy-farm/product/candy/1"
+  },
+  {
+    id: 3,
     title: "Sustainable Aqua & Organic Farming",
     subtitle: "Where Nature Meets Innovation",
     description: "Experience our state-of-the-art aquaculture and organic farming practices, bringing you the finest produce while preserving our environment.",
     image: "/assets/images/Aqua farms/services/aq.jpg",
     alt: "Aqua Farming",
-    badge: "Eco-Friendly"
-  },
-  {
-    id: 2,
-    title: " stay in the aqua farm with raw nature and peaceful surroundings",
-    subtitle: "Your Perfect Getaway",
-    description: "Immerse yourself in our carefully curated accommodations, offering breathtaking views and unmatched comfort by the water.",
-    image: "/assets/images/Aqua farms/services/stay.jpg",
-    alt: "Luxury Stays",
-    badge: "Premium Stays"
-  },
-  {
-    id: 3,
-    title: "Ocean-Fresh fish",
-    subtitle: "From Water to Table",
-    description: "Fresh fish harvested daily from our sustainable farms and prepared by expert chefs.",
-    image: "/assets/images/Aqua farms/services/food.jpg",
-    alt: "Fresh Fish",
-    badge: "Daily Fresh"
+    badge: "Eco-Friendly",
+    link: "/param-aqua-farm"
   }
 ];
+;
 
-const AquaFarmSlider = () => {
+const GikijoyFarm = () => {
+
+  const navigate = useNavigate();
   const settings = {
     dots: true,
     infinite: true,
@@ -64,11 +72,11 @@ const AquaFarmSlider = () => {
         {slides.map((slide, index) => (
           <div key={slide.id} className="relative h-[80vh] flex items-center">
             {/* Background Image with Overlay */}
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-right-top bg-cover bg-no-repeat z-0">
               <img
                 src={slide.image}
                 alt={slide.alt}
-                className="object-cover w-full h-full"
+                className="w-full h-full object-contain sm:object-cover md:object-cover sm:h-[50vh] md:h-[60vh] lg:h-[80vh]"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
             </div>
@@ -83,7 +91,7 @@ const AquaFarmSlider = () => {
               >
                 {/* Badge */}
                 <motion.span
-                  className="inline-block px-4 py-1 bg-blue-500 text-white text-sm font-medium rounded-full mb-6"
+                  className="inline-block px-4 py-1 bg-orange-500 text-white text-sm font-medium rounded-full mb-6"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
@@ -102,7 +110,7 @@ const AquaFarmSlider = () => {
                 </motion.h2>
                 
                 <motion.p
-                  className="text-xl md:text-2xl text-blue-300 mb-6"
+                  className="text-xl md:text-2xl text-yellow-300 mb-6"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
@@ -119,43 +127,25 @@ const AquaFarmSlider = () => {
                 >
                   {slide.description}
                 </motion.p>
-
-                {/* CTA Button */}
-                {/* <motion.button
+                 {/* Explore Now Button */}
+                 <motion.button
                   className="px-8 py-3 bg-blue-500 text-white rounded-full font-medium text-lg hover:bg-blue-600 transition-colors shadow-lg hover:shadow-blue-500/30"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
+                  onClick={() => navigate(slide.link)}
                 >
-                  Learn More
-                </motion.button> */}
+                  Explore Now
+                </motion.button>
               </motion.div>
             </div>
-
-            {/* Decorative Elements */}
-            <motion.div
-              className="absolute right-8 bottom-8 w-32 h-32 border-2 border-white/20 rounded-full"
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.8 }}
-            />
           </div>
         ))}
       </Slider>
-
-      {/* Navigation Arrows (optional) */}
-      <button className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 text-white/70 hover:text-white transition-colors">
-        <span className="sr-only">Previous</span>
-        {/* Add arrow icon here */}
-      </button>
-      <button className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 text-white/70 hover:text-white transition-colors">
-        <span className="sr-only">Next</span>
-        {/* Add arrow icon here */}
-      </button>
     </div>
   );
 };
 
-export default AquaFarmSlider;
+export default GikijoyFarm;

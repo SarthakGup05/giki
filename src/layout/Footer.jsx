@@ -32,25 +32,25 @@ const Footer = () => {
             <h5 className="text-xl font-bold mb-4">GikiJoy Farms</h5>
             <ul>
               <li className="mb-2">
-                <Link className="underline-transition text-white font-medium" to="/gikijoy-farm/mangoes">
-                  Mangoes
+                <Link className="underline-transition text-white font-medium" to="/gikijoy-farm/food-products">
+                  Fruit farms
                 </Link>
               </li>
               <li>
-                <Link className="underline-transition text-white font-medium" to="/gikijoy-farm/tin-cans">
-                  Tin cans
-                </Link>
-              </li>
-              <li className="mb-2">
                 <Link className="underline-transition text-white font-medium" to="/gikijoy-farm/corporate-gifts">
-                  Corporate gifts
+                  Hamp farms
                 </Link>
               </li>
               <li className="mb-2">
+                <Link className="underline-transition text-white font-medium" to="/param-aqua-farm">
+                   aqua farms 
+                </Link>
+              </li>
+              {/* <li className="mb-2">
                 <Link className="underline-transition text-white font-medium" to="/gikijoy-farm/corporate-gifts">
                   Fragrances
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 

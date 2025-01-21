@@ -25,7 +25,7 @@ const ServicesSliderAqua = () => {
       title: "Organic Dining",
       image: "/assets/images/Aqua farms/services/dining.jpg",
       description:
-        "Savor farm-to-table dining experiences with fresh organic produce and seafood. Our expert chefs create memorable meals using ingredients from our own organic farm.",
+        "Savor farm-to-table dining experiences with fresh fish. Our expert chefs create memorable meals using ingredients from our own organic farm.",
     },
   ];
 

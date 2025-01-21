@@ -75,13 +75,15 @@ const AboutUsAqua = () => {
             </div>
 
             <div className="flex gap-4 pt-6">
-              <button className="px-6 py-3 text-white bg-blue-500 hover:bg-blue-600 rounded-lg flex items-center space-x-2">
+              {/* <button className="px-6 py-3 text-white bg-blue-500 hover:bg-blue-600 rounded-lg flex items-center space-x-2">
                 <span>Learn More</span>
                 <ArrowRight className="h-4 w-4" />
-              </button>
-              {/* <button className="px-6 py-3 text-blue-400 border border-blue-400 hover:bg-slate-800 rounded-lg">
-                Contact Us
               </button> */}
+              <a href="  tel:+91 7817821976">
+              <button className="px-6 py-3 text-blue-400 border border-blue-400 hover:bg-slate-800 rounded-lg">
+                Contact Us
+              </button>
+              </a>
             </div>
           </motion.div>
         </motion.div>

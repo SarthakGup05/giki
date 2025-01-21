@@ -1,153 +1,166 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React, { useEffect } from "react";
+
+import Banner from "../components/Utils/Banner";
+import Icar from "/assets/images/page banner/icar.png";
 
 const AboutUs = () => {
-  useEffect(() => {
-    AOS.init({ duration: 2000 });
-  }, []);
+  // useEffect(() => {
+  //   AOS.init({ duration: 1500 });
+  // }, []);
 
   return (
-    <div className="bg-gray-100 p-8">
-      <section className="text-center py-8" data-aos="fade-up">
-        <h1 className="text-4xl font-bold mb-4">About Us</h1>
-        <p className="text-lg text-gray-700">
-          Welcome to Mango Delight, your number one source for all things mango.
-          We're dedicated to providing you the very best of mango products, with
-          an emphasis on quality, freshness, and variety.
-        </p>
-      </section>
-
-      <section className="py-8">
-        <h2 className="text-3xl font-bold mb-4" data-aos="fade-right">
-          Our Products
-        </h2>
-
-        <div
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch mb-8"
-          data-aos="fade-right"
-        >
-          <div>
-            <img
-              src="/assets/images/mango shoot/GikiJoy Cans/DASHEHRI Pulp/0H2A9861.JPG"
-              alt="Mango Pulp"
-              className="rounded-lg shadow-lg w-full h-80 object-cover"
-            />
-          </div>
-          <div className="p-6 md:px-10 md:py-8 flex flex-col justify-center">
-            <h3 className="text-2xl font-semibold mb-2">Mango Pulp</h3>
-            <p className="text-gray-600 mb-2">
-              Our mango pulp is made from the finest mangoes, offering a rich
-              and delicious flavor. It is perfect for a variety of uses,
-              including smoothies, desserts, and as a base for sauces.
-            </p>
-            <p className="text-gray-600">
-              The pulp is carefully processed to retain the natural sweetness
-              and aroma of fresh mangoes, ensuring a delightful experience in
-              every bite. Whether you're making a refreshing drink or a
-              delectable treat, our mango pulp is the ideal choice.
-            </p>
-          </div>
-        </div>
-
-        <div
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch mb-8"
-          data-aos="fade-right"
-        >
-          <div className="order-last md:order-first p-6 md:px-10 md:py-8 flex flex-col justify-center">
-            <h3 className="text-2xl font-semibold mb-2">Mango Tin Cans</h3>
-            <p className="text-gray-600 mb-2">
-              Enjoy the taste of fresh mangoes all year round with our mango tin
-              cans. Packed with the highest quality mangoes, our tin cans
-              provide a convenient way to savor the deliciousness of mangoes
-              anytime.
-            </p>
-            <p className="text-gray-600">
-              Perfect for baking, cooking, or simply enjoying as a snack, our
-              mango tin cans are a versatile addition to your pantry. The
-              airtight packaging ensures the mangoes stay fresh and flavorful
-              for a long time.
-            </p>
-          </div>
-          <div className="order-first md:order-last">
-            <img
-              src="/assets/images/GikiJoy Edited Sku Images/WhatsApp Image 2024-06-25 at 18.53.34_c384aa9d.jpg"
-              alt="Mango Tin Cans"
-              className="rounded-lg shadow-lg w-full h-80 object-cover"
-            />
-          </div>
-        </div>
-
-        <div
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch mb-8"
-          data-aos="fade-right"
-        >
-          <div>
-            <img
-              src="/assets/images/mango shoot/Hybrid/0H2A9390.JPG"
-              alt="Variety of Mangoes"
-              className="rounded-lg shadow-lg w-full h-80 object-cover"
-            />
-          </div>
-          <div className="p-6 md:px-10 md:py-8 flex flex-col justify-center">
-            <h3 className="text-2xl font-semibold mb-2">Variety of Mangoes</h3>
-            <p className="text-gray-600 mb-2">
-              We offer a wide variety of mangoes to suit all your culinary
-              needs. From the sweet and juicy Alphonso to the tangy and
-              flavorful Kesar, we have a mango for every palate.
-            </p>
-            <p className="text-gray-600">
-              Each variety is carefully selected and harvested at the peak of
-              ripeness to ensure the best taste and quality. Whether you're
-              looking for mangoes to enjoy fresh, in salads, or in recipes, we
-              have the perfect variety for you.
-            </p>
-          </div>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+      {/* Hero Section */}
+      <p>
+        <strong>Technical guidance and production quality approved by-</strong>
+      </p>
+      <img src="/assets/images/page banner/icar.png" alt="" />
+      <section className="relative py-20 px-4 overflow-hidden">
+        <div className="max-w-7xl mx-auto text-center">
+          <h3 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            About Us
+          </h3>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Gikijoy blends innovation, sustainability, and hospitality into a
+            unique experience, offering agricultural tourism, vacation rentals,
+            and food production services focused on eco-conscious practices.
+          </p>
         </div>
       </section>
 
-      {/* <section className="py-8" data-aos="fade-left">
-        <h2 className="text-3xl font-bold mb-4">Our Team</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="bg-white p-6 shadow-lg rounded-lg flex flex-col justify-center">
-            <h3 className="text-2xl font-semibold mb-2">John Doe</h3>
-            <p className="text-gray-600">CEO & Founder</p>
-            <p className="text-gray-600">
-              John is the visionary behind Mango Delight, with a passion for
-              quality mango products.
-            </p>
+      {/* Content Sections */}
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Agricultural Tourism */}
+        <section className="py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-green-500 rounded-3xl transform translate-x-3 translate-y-3"></div>
+              <img
+                src="\assets\images\Aqua farms\gallery\2.jpg"
+                alt="Agricultural Tourism"
+                className="relative w-full h-[400px] object-cover rounded-3xl shadow-xl"
+              />
+            </div>
+            <div className="space-y-6">
+              <h2 className="text-4xl font-bold text-gray-800">
+                Agricultural Tourism
+              </h2>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Our experiential tourism educates visitors on sustainable
+                farming methods while highlighting the importance of preserving
+                natural resources.
+              </p>
+              <a
+                href="https://www.gikijoy.com/param-aqua-farm"
+                className="inline-block px-6 py-3 bg-green-500 text-white text-lg font-semibold rounded-xl shadow-lg hover:bg-green-600 transition-all"
+              >
+                Visit
+              </a>
+            </div>
           </div>
-          <div className="bg-white p-6 shadow-lg rounded-lg flex flex-col justify-center">
-            <h3 className="text-2xl font-semibold mb-2">Jane Smith</h3>
-            <p className="text-gray-600">Head of Marketing</p>
-            <p className="text-gray-600">
-              Jane's marketing expertise has helped us reach mango lovers all
-              over the world.
-            </p>
-          </div>
-          <div className="bg-white p-6 shadow-lg rounded-lg flex flex-col justify-center">
-            <h3 className="text-2xl font-semibold mb-2">Emily Johnson</h3>
-            <p className="text-gray-600">Product Manager</p>
-            <p className="text-gray-600">
-              Emily ensures that our products meet the highest standards of
-              quality.
-            </p>
-          </div>
-        </div>
-      </section> */}
+        </section>
 
-      <section className="py-8" data-aos="fade-up">
-        <h2 className="text-3xl font-bold mb-4">Visit Our Store</h2>
-        <p className="text-lg text-gray-700">
-          Visit our online store to explore our full range of mango products. We
-          are committed to delivering the best mango experience to our
-          customers.
-        </p>
-        {/* <a href="/store" className="text-mango-yellow font-semibold hover:underline">
-          Go to Store
-        </a> */}
-        <hr />
-      </section>
+        {/* Vacation Rentals */}
+        <section className="py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div className="space-y-6 order-2 md:order-1">
+              <h2 className="text-4xl font-bold text-gray-800">
+                Vacation Rentals
+              </h2>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                We offer a range of properties, from cozy cottages to luxury
+                villas, blending modern amenities with rural charm. Perfect for
+                city dwellers seeking peace and comfort amidst nature.
+              </p>
+              <a
+                href="https://www.gikijoy.com/gikijoy-getaway"
+                className="inline-block px-6 py-3 bg-blue-500 text-white text-lg font-semibold rounded-xl shadow-lg hover:bg-blue-600 transition-all"
+              >
+                Visit
+              </a>
+            </div>
+            <div className="relative order-1 md:order-2">
+              <div className="absolute inset-0 bg-blue-500 rounded-3xl transform translate-x-3 translate-y-3"></div>
+              <img
+                src="\assets\images\BnResort\_DSC2338.jpg"
+                alt="Vacation Rentals"
+                className="relative w-full h-[400px] object-cover rounded-3xl shadow-xl"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Food Production */}
+        <section className="py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-orange-500 rounded-3xl transform translate-x-3 translate-y-3"></div>
+              <img
+                src="/assets\images\MangoProduct\cover- ac1.png"
+                alt="Food Processing"
+                className="relative w-full h-[400px] object-cover rounded-3xl shadow-xl"
+              />
+            </div>
+            <div className="space-y-6">
+              <h2 className="text-4xl font-bold text-gray-800">
+                Food Production
+              </h2>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Partnering with ICAR and CISH, we process subtropical fruits
+                into jams, juices, and dried products, adding value to local
+                produce while supporting sustainable agriculture.
+              </p>
+              <a
+                href="https://www.gikijoy.com/gikijoy-farm/food-products"
+                className="inline-block px-6 py-3 bg-orange-500 text-white text-lg font-semibold rounded-xl shadow-lg hover:bg-orange-600 transition-all"
+              >
+                Visit
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div className="bg-white p-8 rounded-3xl shadow-lg">
+            <h2 className="text-3xl font-bold text-gray-800 mb-6">
+              Recognized by ICAR
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Gikijoy was selected for the ICAR Agri-Business Incubation
+              Program, gaining access to technical support, market linkages, and
+              research expertise to drive innovation in subtropical fruit
+              processing.
+            </p>
+          </div>
+          <div className="bg-white p-8 rounded-3xl shadow-lg">
+            <h2 className="text-3xl font-bold text-gray-800 mb-6">
+              Commitment to Sustainability
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Sustainability is at the core of our operations, from promoting
+              eco-tourism to implementing advanced agricultural practices. We
+              strive to create a positive impact on the environment and local
+              community.
+            </p>
+          </div>
+        </section>
+
+        {/* Call to Action */}
+        <section className="py-20 text-center">
+          <div className="bg-gradient-to-r from-green-500 to-blue-500 rounded-3xl p-12 text-white">
+            <h2 className="text-4xl font-bold mb-6">Join Us</h2>
+            <p className="text-xl max-w-3xl mx-auto mb-8">
+              Experience the perfect blend of innovation, sustainability, and
+              hospitality with Gikijoy.
+            </p>
+            <a href="tel:+91 7817821976">
+              <button className="px-8 py-4 bg-white text-gray-800 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                Contact Us
+              </button>
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

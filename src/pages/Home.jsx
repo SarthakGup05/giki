@@ -1,9 +1,11 @@
 import React, { useRef } from 'react';
 
-import { MangoProducts1 } from '../components/Products';
 import BannerSlider from '../layout/BannerSlider';
 import HowWeGrowOurMangoes from '../components/WhyGikiJoy';
 import RouteCards from '../components/RouteCards';
+import ProductCategoryCards from '../components/Products';
+import GikijoyFarm from '../layout/AquaFarmslider';
+
 
 const Home = () => {
   const productSectionRef = useRef(null);
@@ -14,11 +16,11 @@ const Home = () => {
 
   return (
     <div>
-      <BannerSlider scrollToProductSection={scrollToProductSection} />
+      <GikijoyFarm />
       
       <HowWeGrowOurMangoes />
       <div ref={productSectionRef}>
-        <MangoProducts1 />
+        <ProductCategoryCards/>
         
       </div>
     </div>
