@@ -38,7 +38,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link className="underline-transition text-white font-medium" to="/gikijoy-farm/corporate-gifts">
-                  Hamp farms
+                  Hemp farms
                 </Link>
               </li>
               <li className="mb-2">

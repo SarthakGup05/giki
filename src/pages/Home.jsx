@@ -5,6 +5,7 @@ import HowWeGrowOurMangoes from '../components/WhyGikiJoy';
 import RouteCards from '../components/RouteCards';
 import ProductCategoryCards from '../components/Products';
 import GikijoyFarm from '../layout/AquaFarmslider';
+import CategorySection from '../components/GatewaySection';
 
 
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
   return (
     <div>
       <GikijoyFarm />
-      
+      <CategorySection/>
       <HowWeGrowOurMangoes />
       <div ref={productSectionRef}>
         <ProductCategoryCards/>
