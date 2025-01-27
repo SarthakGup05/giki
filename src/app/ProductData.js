@@ -163,7 +163,108 @@ const productData = {
     },
    
   ],
-
+  freshners: [
+    {
+      id: 1,
+      title: "White Wood",
+      price: "₹480",
+      imgSrc: "/assets/images/room freshners/1.jpg",
+      description:
+        "A soothing blend of earthy and woody tones, ideal for creating a calm and refreshing ambiance in your living spaces. Perfect for any room or office.",
+      fragrance: "Woody",
+      netWeight: "200 ml",
+      ingredients: ["Natural essential oils", "Aqua base", "Fragrance compounds"],
+      storage: "Store in a cool, dry place. Keep away from direct sunlight.",
+      manufacturedBy:
+        "GiKiJoy, 1/523 Jiamau, Hazratganj, Lucknow, Uttar Pradesh 226001",
+      email: "contactGikijoy@gmail.com",
+      gst: "09ABBFG3476E1ZF",
+      packagedOn: "10th Jan 2024",
+      useBefore: "24 months from the date of manufacture",
+      brand: "GiKiJoy",
+      isEcoFriendly: true,
+    },
+    {
+      id: 2,
+      title: "Golden Dust",
+      price: "₹480",
+      imgSrc: "/assets/images/room freshners/2.jpg",
+      description:
+        "A luxurious fragrance with a hint of oriental spices, providing a warm and inviting aura. Perfect for special occasions and cozy evenings.",
+      fragrance: "Spicy Oriental",
+      netWeight: "150 ml",
+      ingredients: ["Fragrance oils", "Aqua", "Natural extracts"],
+      storage: "Keep in a dry place, away from heat and direct sunlight.",
+      manufacturedBy:
+        "GiKiJoy, 1/523 Jiamau, Hazratganj, Lucknow, Uttar Pradesh 226001",
+      email: "contactGikijoy@gmail.com",
+      gst: "09ABBFG3476E1ZF",
+      packagedOn: "5th Feb 2024",
+      useBefore: "24 months from the date of manufacture",
+      brand: "GiKiJoy",
+      isEcoFriendly: true,
+    },
+    {
+      id: 3,
+      title: "Oudh Fancy",
+      price: "₹480",
+      imgSrc: "/assets/images/room freshners/3.jpg",
+      description:
+        "An exotic fragrance with a rich, smoky aroma of oudh that adds a touch of elegance and luxury to any space.",
+      fragrance: "Oudh",
+      netWeight: "100 ml",
+      ingredients: ["Oudh oil", "Aqua base", "Fragrance extracts"],
+      storage: "Store in a cool and dry area, away from open flames.",
+      manufacturedBy:
+        "GiKiJoy, 1/523 Jiamau, Hazratganj, Lucknow, Uttar Pradesh 226001",
+      email: "contactGikijoy@gmail.com",
+      gst: "09ABBFG3476E1ZF",
+      packagedOn: "15th March 2024",
+      useBefore: "24 months from the date of manufacture",
+      brand: "GiKiJoy",
+      isEcoFriendly: true,
+    },
+    {
+      id: 4,
+      title: "Romania Garden",
+      price: "₹480",
+      imgSrc: "/assets/images/room freshners/4.jpg",
+      description:
+        "A floral paradise with a refreshing blend of blooming roses and jasmine, creating a rejuvenating and delightful ambiance.",
+      fragrance: "Floral",
+      netWeight: "200 ml",
+      ingredients: ["Floral oils", "Water base", "Natural essence"],
+      storage: "Keep in a cool, dry place, away from sunlight.",
+      manufacturedBy:
+        "GiKiJoy, 1/523 Jiamau, Hazratganj, Lucknow, Uttar Pradesh 226001",
+      email: "contactGikijoy@gmail.com",
+      gst: "09ABBFG3476E1ZF",
+      packagedOn: "20th April 2024",
+      useBefore: "24 months from the date of manufacture",
+      brand: "GiKiJoy",
+      isEcoFriendly: true,
+    },
+    {
+      id: 5,
+      title: "Eminence",
+      price: "₹480",
+      imgSrc: "/assets/images/room freshners/5.jpg",
+      description:
+        "A premium selection with a balanced blend of citrus and musk, creating an uplifting yet sophisticated atmosphere.",
+      fragrance: "Citrus Musk",
+      netWeight: "200 ml",
+      ingredients: ["Citrus extracts", "Essential oils", "Water"],
+      storage: "Store in a dry and cool place. Avoid exposure to direct heat.",
+      manufacturedBy:
+        "GiKiJoy, 1/523 Jiamau, Hazratganj, Lucknow, Uttar Pradesh 226001",
+      email: "contactGikijoy@gmail.com",
+      gst: "09ABBFG3476E1ZF",
+      packagedOn: "1st May 2024",
+      useBefore: "24 months from the date of manufacture",
+      brand: "GiKiJoy",
+      isEcoFriendly: true,
+    },
+  ]
 };
 
 // src/data/listingData.js

@@ -5,7 +5,7 @@ import HowWeGrowOurMangoes from '../components/WhyGikiJoy';
 import RouteCards from '../components/RouteCards';
 import ProductCategoryCards from '../components/Products';
 import GikijoyFarm from '../layout/AquaFarmslider';
-import CategorySection from '../components/GatewaySection';
+import CategorySection from '../components/FarmsCatSection';
 
 
 const Home = () => {

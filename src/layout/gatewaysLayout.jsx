@@ -1,6 +1,6 @@
 // src/layout/GatewayNavbar.jsx
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import BookNow from "../components/Utils/BookNow";
 import Whtsappbtn from "../components/Utils/Whtsappbtn";
 
@@ -8,6 +8,9 @@ const GatewayNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const location = useLocation(); // Get the current route
+
+  const isGetawayRoute = location.pathname.startsWith("/gikijoy-getaway"); // Check if the route starts with "/gikijoy-getaway"
 
   return (
     <>
@@ -25,8 +28,8 @@ const GatewayNavbar = () => {
           </div>
         </div>
       </nav>
-      <BookNow />
-      <Whtsappbtn/>
+      {isGetawayRoute && <BookNow />} {/* Conditionally render BookNow */}
+      <Whtsappbtn />
     </>
   );
 };

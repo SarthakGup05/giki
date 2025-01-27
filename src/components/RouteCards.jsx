@@ -15,16 +15,24 @@ const routes = [
     id: 2,
     title: "GikiJoy Farms",
     description: "Authentic farm experiences with fresh handpicked fruits.",
-    image: "/assets/images/SliderImages/mangoFarm.jpg",
+    image: "/assets/images/page banner/hemp farms.jpg",
     route: "/gikijoy-farm",
   },
-  {
+  // {
+  //   id: 3,
+  //   title: "GikiJoy Agro Tourism",
+  //   description: "Experience the beauty of aqua farming with fresh food.",
+  //   image: "/assets/images/page banner/aqua banner.jpg",
+  //   route: "/param-aqua-farm",
+  // },
+   {
     id: 3,
-    title: "GikiJoy Agro Tourism",
-    description: "Experience the beauty of aqua farming with fresh seafood.",
-    image: "/assets/images/Aqua farms/aq farm.jpg",
-    route: "/param-aqua-farm",
+    title: "GikiJoy Products",
+    description: "Experience the freshness with our products.",
+    image: "/assets/images/page banner/gikijoy.jpg",
+    route: "/gikijoy-products",
   },
+  
 ];
 
 const RouteCards = () => {

@@ -13,7 +13,7 @@ const Footer = () => {
           <div>
             <h5 className="text-xl font-bold mb-4">Address</h5>
             <p className="text-white font-medium">
-              1/523 GiaMau, HAZRATGUNJ LUCKNOW <br /> 226001 Uttar Pradesh
+              1/523 JiaMau, HAZRATGUNJ LUCKNOW <br /> 226001 Uttar Pradesh
             </p>
             <div className="mt-4 text-white font-medium space-y-2">
               <div className="flex items-center space-x-2">
@@ -76,6 +76,16 @@ const Footer = () => {
               <li className="mb-2">
                 <Link className="underline-transition text-white font-medium" to="/gikijoy-getaway">
                   Uttar Pradesh
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="text-xl font-bold mb-4">GikiJoy Products</h5>
+            <ul>
+              <li className="mb-2">
+                <Link className="underline-transition text-white font-medium" to="/gikijoy-products/room-freshner">
+                  Room Freshners
                 </Link>
               </li>
             </ul>

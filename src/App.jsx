@@ -23,9 +23,6 @@ import Ranikhet from "./pages/Gatewaypages/Rankhet";
 import BNResort from "./pages/Gatewaypages/BNResort";
 import ChahalFarms from "./pages/Gatewaypages/ChahalFarms";
 import RouteCards from "./components/RouteCards";
-import TravelGrid from "./components/Gikijoy gateways/TravelGrid";
-import { List } from "@chakra-ui/react";
-import listingData from "./app/ListingData";
 import Uttrakhand from "./pages/Gatewaypages/Grids/Uttarakhand";
 import Ashdale from "./pages/Gatewaypages/Ashdale";
 import Goa from "./pages/Gatewaypages/Grids/Goa";
@@ -34,6 +31,8 @@ import FernCottage from "./pages/Gatewaypages/FernCottage";
 import BabaAyurveda from "./pages/Gatewaypages/BabaAyurveda";
 import ThankYou from "./pages/Gatewaypages/ThankYou";
 import Aquafarms from "./AquaFarms/Components/pages/Aquafarms";
+import GikijoyProductsHome from "./GikiJoyProducts/Components/Home";
+import RoomProduct from "./GikiJoyProducts/Components/RoomFreshnerGrid";
 
 // Initialize AOS animations
 AOS.init();
@@ -50,15 +49,18 @@ function AppContent() {
   return (
     <div>
       {/* Conditional Navbar Rendering */}
-      {location.pathname === "/" ? (
-        <GatewayNavbar />
-      ) : isGatewayRoute ? (
-        <GatewayNavbar />
-      ) : isAquaFarmRoute ? (
-        <AquaNavbar />
-      ) : (
-        <Navbar />
-      )}
+  {location.pathname === "/" ? (
+    <GatewayNavbar />
+  ) : location.pathname.startsWith("/gikijoy-products") ? (
+    <GatewayNavbar />
+  ) : isGatewayRoute ? (
+    <GatewayNavbar />
+  ) : isAquaFarmRoute ? (
+    <AquaNavbar />
+  ) : (
+    <Navbar />
+  )}
+
 
       <main>
         <Routes>
@@ -169,6 +171,10 @@ function AppContent() {
 
           {/* Aqua Farms Routes */}
           <Route path="/param-aqua-farm" element={<Aquafarms />} />
+           {/* GikiJoy products Routes */}
+          <Route path="/gikijoy-products" element={<GikijoyProductsHome />} />
+          <Route path="/gikijoy-products/room-freshner" element={<RoomProduct />} />
+         
         </Routes>
       </main>
 
