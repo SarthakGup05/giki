@@ -13,9 +13,9 @@ const routes = [
   },
   {
     id: 2,
-    title: "GikiJoy Farms",
-    description: "Authentic farm experiences with fresh handpicked fruits.",
-    image: "/assets/images/page banner/hemp farms.jpg",
+    title: "GikiJoy Agro Tourism",
+    description: "",
+    image:"/assets/images/page banner/farm logo.jpg",
     route: "/gikijoy-farm",
   },
   // {
@@ -29,7 +29,7 @@ const routes = [
     id: 3,
     title: "GikiJoy Products",
     description: "Experience the freshness with our products.",
-    image: "/assets/images/page banner/gikijoy.jpg",
+    image: "/assets/images/page banner/our products.jpg",
     route: "/gikijoy-products",
   },
   
@@ -65,8 +65,8 @@ const RouteCards = () => {
 
               {/* Text Content */}
               <div className="absolute bottom-0 left-0 right-0 p-6 text-left text-white">
-                <h3 className="text-2xl font-semibold mb-2">{route.title}</h3>
-                <p className="text-sm mb-4">{route.description}</p>
+                <h3 className="text-lg font-semibold mt-6">{route.title}</h3>
+                {/* <p className="text-sm mt-4">{route.description}</p> */}
                 <Link to={route.route}>
                   <motion.button
                     className="inline-block mt-4 rounded-full bg-yellow-500 text-black py-2 px-4 shadow-md hover:bg-orange-600 transition duration-300 font-medium"
