@@ -8,6 +8,16 @@ import { useNavigate } from "react-router-dom";
 const slides = [
   {
     id: 1,
+    title: "Explore our new Aamla candy",
+    subtitle: "Aamla candy made from the best Aamla fruits.",
+    description: "Our Aamla candy is made from the best Aamla fruits from our farms.",
+    image: "/assets/images/page banner/our products.jpg",
+    alt: "Luxury Stays",
+    badge: "New Arrival",
+    link: "/gikijoy-farm/product/candy/1"
+  },
+  {
+    id: 2,
     title: "",
     subtitle: "",
     description:
@@ -18,16 +28,7 @@ const slides = [
     link: "/gikijoy-products/room-freshner",
   },
 
-  // {
-  //   id: 2,
-  //   title: "Explore our new Aamla candy",
-  //   subtitle: "Aamla candy made from the best Aamla fruits.",
-  //   description: "Our Aamla candy is made from the best Aamla fruits from our farms.",
-  //   image: "/assets/images/SliderImages/amlabnnr.jpg",
-  //   alt: "Luxury Stays",
-  //   badge: "New Arrival",
-  //   link: "/gikijoy-farm/product/candy/1"
-  // },
+
   // {
   //   id: 3,
   //   title: "Sustainable Aqua & Organic Farming",
@@ -48,7 +49,7 @@ const GikijoyProductsSlider = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 2000,
     fade: true,
     cssEase: "cubic-bezier(0.87, 0.03, 0.41, 0.9)",
     dotsClass: "slick-dots custom-dots",
@@ -104,7 +105,7 @@ const GikijoyProductsSlider = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
                 >
-                  {slide.title}
+                  {/* {slide.title} */}
                 </motion.h2>
 
                 <motion.p
@@ -113,7 +114,7 @@ const GikijoyProductsSlider = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                  {slide.subtitle}
+                  {/* {slide.subtitle} */}
                 </motion.p>
 
                 {/* Description */}

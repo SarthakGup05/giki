@@ -6,13 +6,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const FarmsCat = [
-  // {
-  //   id: 1,
-  //   title: "Uttarakhand",
-  //   description: "Nestled in the serene Himalayas, ideal for nature lovers and adventure seekers.",
-  //   image: "/assets/images/SliderImages/ranikhet.jpg",
-  //   route: "/gikijoy-getaway/uttarakhand",
-  // },
   {
     id: 1,
     title: "Fruit farms",
@@ -21,18 +14,26 @@ const FarmsCat = [
     route: "/gikijoy-farm/food-products",
   },
   {
-    id: 3,
+    id: 2,
     title: "Aqua farms",
     description: "EXPERIENCE THE FARM FRESHNESS",
     image: "/assets/images/page banner/aqua banner.jpg",
     route: "/param-aqua-farm",
   },
   {
-    id: 4,
+    id: 3,
     title: "Hemp farms",
     description: "More products Coming soon !",
     image: "/assets/images/page banner/hemp farms.jpg",
     route: "/gikijoy-farm/corporate-gifts",
+  },
+  {
+    id: 4,
+    title: "Dairy farms",
+    description: "products Coming soon !",
+    image: "/assets/images/page banner/dairy farms.jpg",
+    route: "/gikijoy-farm",
+    comingSoon: true, // Add a flag to identify the "Coming Soon" card
   },
 ];
 
@@ -58,6 +59,9 @@ const CategorySection = () => {
 
   // Using a media query to detect screen size
   const isDesktop = window.innerWidth >= 1024;
+
+  // Reorder FarmsCat for small screens
+  const reorderedFarmsCat = isDesktop ? FarmsCat : [FarmsCat[1], FarmsCat[0], FarmsCat[2], FarmsCat[3]];
 
   return (
     <section className="py-16 bg-gray-100">
@@ -87,6 +91,13 @@ const CategorySection = () => {
                 {/* Overlay for hover effect */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 hover:opacity-40 transition-opacity duration-300"></div>
 
+                {/* "Coming Soon" Badge */}
+                {farm.comingSoon && (
+                  <div className="absolute top-4 right-4 bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-medium">
+                    Coming Soon
+                  </div>
+                )}
+
                 {/* Text Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-justify text-sm text-white">
                   <h3 className="text-xl font-mono mb-2">{farm.title}</h3>
@@ -106,7 +117,7 @@ const CategorySection = () => {
         ) : (
           // Small Screens: Grid Layout
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {FarmsCat.map((farm, index) => (
+            {reorderedFarmsCat.map((farm, index) => (
               <motion.div
                 key={index}
                 className="relative rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-2xl transform transition-all duration-300"
@@ -121,12 +132,20 @@ const CategorySection = () => {
                   className="w-full h-56 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 hover:opacity-40 transition-opacity duration-300"></div>
+
+                {/* "Coming Soon" Badge */}
+                {farm.comingSoon && (
+                  <div className="absolute top-4 right-4 bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-medium">
+                    Coming Soon
+                  </div>
+                )}
+
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-left text-white">
-                  <h3 className="text-2xl font-semibold mb-2">{farm.title}</h3>
-                  <p className="text-sm mb-4">{farm.description}</p>
+                  <h3 className="pr-4 text-xl font-mono mb-2">{farm.title}</h3>
+                  {/* <p className="text-sm mb-4">{farm.description}</p> */}
                   <Link to={farm.route}>
                     <motion.button
-                      className="inline-block mt-4 rounded-full bg-yellow-500 text-black py-2 px-4 shadow-md hover:bg-orange-600 transition duration-300 font-medium"
+                      className="inline-block mt-4 rounded-full bg-yellow-500 text-black text-xs py-2 px-4 shadow-md hover:bg-orange-600 transition duration-300 font-medium"
                       whileHover={{ scale: 1.1 }}
                     >
                       View Details
@@ -143,4 +162,3 @@ const CategorySection = () => {
 };
 
 export default CategorySection;
-

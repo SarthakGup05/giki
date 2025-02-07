@@ -15,7 +15,7 @@ import { MangoCansPage } from "./pages/MangoProducts2";
 import Mangoes from "./pages/Mangoes";
 import ProductDetail from "./components/ProductDetail";
 import ScrollToTop from "./components/Utils/ScrollToTop";
-import OurTeam from "./pages/Ourteam";
+// import OurTeam from "./pages/Ourteam";
 import Gifts from "./pages/Gifts";
 import Gateway from "./pages/Gatewaypages/Gateway";
 import JungleVilla from "./pages/Gatewaypages/JungleVilla";
@@ -125,14 +125,14 @@ function AppContent() {
               </Layout>
             }
           />
-          <Route
+          {/* <Route
             path="/our-team"
             element={
               <Layout>
                 <OurTeam />
               </Layout>
             }
-          />
+          /> */}
 
           {/* GikiJoy Gateways Routes */}
           <Route path="/gikijoy-getaway" element={<Gateway />} />

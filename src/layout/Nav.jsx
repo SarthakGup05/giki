@@ -49,7 +49,7 @@ const Navbar = () => {
         <div className="text-2xl font-bold">
           <Link to="/">
             <img
-              src="./assets/images/logo/GikiJoy  Logo Black.png"
+              src="/assets/images/logo/GikiJoy  Logo Black.png"
               className="h-20 w-30"
               alt="Brand Logo"
             />

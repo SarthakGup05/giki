@@ -18,7 +18,7 @@ const Footer = () => {
             <div className="mt-4 text-white font-medium space-y-2">
               <div className="flex items-center space-x-2">
                 <FaEnvelope className="text-white" />
-                <span>kirti@gikijoy.com</span>
+                <span>contact@GikiJoy.com</span>
               </div>
               <div className="flex items-center space-x-2">
                 <FaPhoneAlt className="text-white" />
@@ -97,9 +97,9 @@ const Footer = () => {
           <Link className="underline-transition text-white font-medium" to="/about">
             About Us
           </Link>
-          <Link className="underline-transition text-white font-medium" to="/our-team">
+          {/* <Link className="underline-transition text-white font-medium" to="/our-team">
             Our Team
-          </Link>
+          </Link> */}
           <Link className="underline-transition text-white font-medium" to="/contactus">
             Contact
           </Link>

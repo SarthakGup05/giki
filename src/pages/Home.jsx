@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 
-import BannerSlider from '../layout/BannerSlider';
-import HowWeGrowOurMangoes from '../components/WhyGikiJoy';
-import RouteCards from '../components/RouteCards';
+// import BannerSlider from '../layout/BannerSlider';
+// import HowWeGrowOurMangoes from '../components/WhyGikiJoy';
+// import RouteCards from '../components/RouteCards';
 import ProductCategoryCards from '../components/Products';
 import GikijoyFarm from '../layout/AquaFarmslider';
 import CategorySection from '../components/FarmsCatSection';
@@ -19,7 +19,7 @@ const Home = () => {
     <div>
       <GikijoyFarm />
       <CategorySection/>
-      <HowWeGrowOurMangoes />
+      {/* <HowWeGrowOurMangoes /> */}
       <div ref={productSectionRef}>
         <ProductCategoryCards/>
         

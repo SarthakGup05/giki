@@ -23,7 +23,7 @@ const ContactUs = () => {
                   <i className="fa-regular fa-envelope"></i>
                 </span>
                 <a className="flex-1" href="  kirti@Gikijoy.com">
-                  kirti@Gikijoy.com
+                contact@GikiJoy.com
                 </a>
               </div>
               <div className="flex flex-wrap items-center">

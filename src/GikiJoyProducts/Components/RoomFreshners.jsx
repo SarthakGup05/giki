@@ -12,30 +12,50 @@ const RoomFreshnerCategoryCards = () => {
       price: "₹200",
       tag: "Premium Selection",
       imageUrl: "/assets/images/room freshners/1.jpg",
+      route: "/gikijoy-products/room-freshner",
     },
     {
       title: "Golden Dust",
       price: "₹150",
       tag: "Best Seller",
       imageUrl: "/assets/images/room freshners/2.jpg",
+      route: "/gikijoy-products/room-freshner",
     },
     {
       title: "Oudh Fancy",
       price: "₹100",
       tag: "New Arrival",
       imageUrl: "/assets/images/room freshners/3.jpg",
+      route: "/gikijoy-products/room-freshner",
     },
     {
       title: "Romania Garden",
       price: "₹250",
       tag: "Limited Edition",
       imageUrl: "/assets/images/room freshners/4.jpg",
+      route: "/gikijoy-products/room-freshner",
     },
     {
       title: "Eminence",
       price: "₹200",
       tag: "Premium Selection",
       imageUrl: "/assets/images/room freshners/5.jpg",
+      route: "/gikijoy-products/room-freshner",
+    },
+    {
+      title: "Mango Cans",
+      price: "₹150",
+      tag: "Best Seller",
+      imageUrl:
+        "/assets/images/mango shoot/GikiJoy Cans/DASHEHRI  Slices in Pulp/GKJPulp2.jpg",
+      route: "/gikijoy-farm/food-products",
+    },
+    {
+      title: "Aamla Candy",
+      price: "₹100",
+      tag: "New Arrival",
+      imageUrl: "/assets/images/MangoProduct/cover- ac1.png",
+      route: "/gikijoy-farm/food-products",
     },
   ];
 
@@ -100,7 +120,7 @@ const RoomFreshnerCategoryCards = () => {
               {/* Overlay Info */}
               <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 via-black/50 to-transparent text-white opacity-0 group-hover:opacity-100 transition duration-500">
                 <h3 className="text-lg font-semibold mb-2">{product.title}</h3>
-                <Link to="/gikijoy-products/room-freshner">
+                <Link to={product.route}>
                   <button className="mt-2 px-4 py-2 bg-yellow-500 text-white rounded-lg shadow-md hover:bg-yellow-600 transition">
                     <Eye className="w-5 h-5 inline mr-2" />
                     View Details
