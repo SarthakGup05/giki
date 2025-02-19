@@ -100,7 +100,7 @@ const CategorySection = () => {
 
                 {/* Text Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-justify text-sm text-white">
-                  <h3 className="text-xl font-mono mb-2">{farm.title}</h3>
+                  <h3 className="text-xl font-mono mt-12">{farm.title}</h3>
                   <p className="text-sm mb-1 font-sans"></p>
                   <Link to={farm.route}>
                     <motion.button
@@ -141,7 +141,7 @@ const CategorySection = () => {
                 )}
 
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-left text-white">
-                  <h3 className="pr-4 text-xl font-mono mb-2">{farm.title}</h3>
+                  <h3 className="pr-6 text-sm font-mono mt-14">{farm.title}</h3>
                   {/* <p className="text-sm mb-4">{farm.description}</p> */}
                   <Link to={farm.route}>
                     <motion.button

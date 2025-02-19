@@ -8,35 +8,35 @@ const RoomFreshners = [
     title: "White Wood",
     price: "₹480",
     tag: "Premium Selection",
-    imgSrc: "/assets/images/room freshners/1.jpg",
+    imgSrc: "/assets/images/room freshners/1.webp",
   },
   {
     id: 2, // Add unique id
     title: "Golden Dust",
     price: "₹480",
     tag: "Best Seller",
-    imgSrc: "/assets/images/room freshners/2.jpg",
+    imgSrc: "/assets/images/room freshners/2.webp",
   },
   {
     id: 3,
     title: "Oudh Fancy",
     price: "₹480",
     tag: "New Arrival",
-    imgSrc: "/assets/images/room freshners/3.jpg",
+    imgSrc: "/assets/images/room freshners/3.webp",
   },
   {
     id: 4,
     title: "Romania Garden",
     price: "₹480",
     tag: "Limited Edition",
-    imgSrc: "/assets/images/room freshners/4.jpg",
+    imgSrc: "/assets/images/room freshners/4.webp",
   },
   {
     id: 5,
     title: "Eminence",
     price: "₹480",
     tag: "Premium Selection",
-    imgSrc: "/assets/images/room freshners/5.jpg",
+    imgSrc: "/assets/images/room freshners/5.webp",
   },
 ];
 

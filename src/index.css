@@ -1,24 +1,24 @@
-/* Add this to your CSS */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
-/* Apply the font to specific elements */
+/* Headings: Elegant and Modern */
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
-  }
-  
-  p, body {
+    font-weight: 400;
+}
+
+/* Body & Paragraphs: Thin and Readable */
+p, body {
     font-family: 'Roboto', sans-serif;
-  }
-  
-  .navbar, .footer {
+    font-weight: 300;
+}
+
+/* Navbar & Footer: Minimal and Sleek */
+.navbar, .footer, button, .cta {
     font-family: 'Poppins', sans-serif;
-  }
-  
+    font-weight: 400;
+}
 
 @tailwind base;
 @tailwind components;

@@ -11,7 +11,7 @@ export const ProductGrid = ({ products, category }) => {
             className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2"
           >
             {/* Image Container with Overlay */}
-            <div className="relative w-full aspect-square overflow-hidden">
+            <div className="relative w-full contain overflow-hidden">
               <img
                 src={product.imgSrc}
                 alt={product.title}

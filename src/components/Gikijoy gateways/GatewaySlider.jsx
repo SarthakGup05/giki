@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 const slides = [
   {
     id: 1,
-    title: "Elevate Your Traveling Experience with Us",
+    title: "",
     image: "/assets/images/SliderImages/moutain.jpg",
     alt: "Mountain View",
   },
@@ -44,16 +44,16 @@ const GatewaySlider = () => {
           <div key={slide.id} className="relative h-full flex items-center justify-center">
             <img
               src={slide.image}
-              alt={slide.alt}
+              alt={slide.alt} 
               className="object-cover w-full h-[600px]"
             />
             <div className="absolute inset-0 flex justify-end items-center p-4 md:px-8 h-full">
               <motion.div
                 className="text-right bg-black bg-opacity-0 p-6 md:p-10 rounded-lg relative left-3"
                 initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1 }}
-              >
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1 }}
+                >
                 <motion.h2
                   className="text-3xl md:text-5xl font-bold text-white font-sans"
                   initial={{ y: -50, opacity: 0 }}
@@ -68,7 +68,7 @@ const GatewaySlider = () => {
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: 'spring', stiffness: 300 }}
-                >
+              >
                   {slide.buttonText || 'Learn More'}
                 </motion.button> */}
               </motion.div>
