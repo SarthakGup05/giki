@@ -1,0 +1,1 @@
+  to={`/gikijoy-farm/product/${category}/${product.id}`}

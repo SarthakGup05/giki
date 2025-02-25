@@ -1,122 +1,153 @@
-import React, { useState } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const SustainableHero = () => {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
-  const [isExpanded, setIsExpanded] = useState(false); // State to control expansion of text
-  const controls = useAnimation();
+  const [activePoint, setActivePoint] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    // Trigger initial animation after mount
+    setIsVisible(true);
+  }, []);
 
-  React.useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [inView, controls]);
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-  };
-
-  const staggerContainer = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2,
-      },
+  const infoPoints = [
+    {
+      id: "nature",
+      icon: "🌱",
+      title: "Nature-based Solutions",
+      description: "We implement regenerative agriculture practices that work with natural ecosystems rather than against them."
     },
-  };
-
-  const toggleText = () => {
-    setIsExpanded(!isExpanded);
-  };
+    {
+      id: "ecosystems",
+      icon: "🌍",
+      title: "Ecosystem Restoration",
+      description: "Our methods actively restore degraded landscapes, increasing biodiversity and soil health across the Iberian Peninsula."
+    },
+    {
+      id: "climate",
+      icon: "☁️",
+      title: "Climate Benefits",
+      description: "Through carbon sequestration and reduced emissions, our approach helps mitigate climate change effects."
+    },
+    {
+      id: "community",
+      icon: "👥",
+      title: "Community Empowerment",
+      description: "We partner with local farmers to create sustainable livelihoods and strengthen regional food systems."
+    }
+  ];
 
   return (
-    <div
-      ref={ref}
-      className="relative w-full min-h-screen bg-white px-4 py-12 sm:py-16 overflow-hidden"
-    >
-      {/* Floating Tags Container - Row on small screens */}
-      <motion.div
-        variants={staggerContainer}
-        initial="hidden"
-        animate={controls}
-        className="absolute left-0 right-0 top-8 sm:top-12 flex flex-row justify-center gap-3 sm:gap-4 sm:justify-between px-4 sm:px-16"
-      >
-        {["Nature-based solutions", "Restores ecosystems", "Benefits climate"].map(
-          (text, index) => (
-            <motion.span
-              key={index}
-              variants={fadeInUp}
-              className="inline-block px-3 sm:px-4 py-1 sm:py-2 bg-blue-50 text-green-800 rounded-full text-xs sm:text-sm whitespace-nowrap"
-            >
-              {text}
-            </motion.span>
-          )
-        )}
-      </motion.div>
+    <div className="relative w-full min-h-screen bg-gradient-to-b from-green-50 to-blue-50 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isVisible ? 0.4 : 0 }}
+          transition={{ duration: 1.5 }}
+          className="absolute -right-64 -top-64 w-96 h-96 rounded-full bg-green-200 blur-3xl"
+        />
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isVisible ? 0.3 : 0 }}
+          transition={{ duration: 1.5, delay: 0.3 }}
+          className="absolute -left-32 bottom-0 w-64 h-64 rounded-full bg-blue-200 blur-3xl"
+        />
+      </div>
 
       {/* Main Content */}
-      <motion.div
-        variants={fadeInUp}
-        initial="hidden"
-        animate={controls}
-        className="max-w-4xl mx-auto text-center mt-16 sm:mt-24"
-      >
-        <h1 className="text-3xl sm:text-4xl font-semibold text-green-800 leading-tight mb-4 sm:mb-6 px-4">
-          We grow premium, sustainable fruits and regenerate nature at scale for
-          future generations.
-        </h1>
-
-        <p className="text-base sm:text-lg text-green-800 mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
-          Our environmentally conscious approach to agriculture and focus on
-          nature-based solutions benefits climate, restores ecosystems, and
-          empowers local communities in the Iberian Peninsula.
-        </p>
-
-        {/* Additional Paragraph Content with Toggle */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 py-16 md:py-24">
         <motion.div
-          initial={{ height: 0, opacity: 0 }}
-          animate={{
-            height: isExpanded ? "auto" : 0,
-            opacity: isExpanded ? 1 : 0,
-            transition: { duration: 0.5 },
-          }}
-          className="overflow-hidden"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
         >
-          <p className="text-base sm:text-lg text-green-800 mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
-            Expanding further, we are working with local farmers to create a
-            sustainable supply chain. This initiative promotes biodiversity, reduces
-            waste, and encourages responsible water use, which collectively ensures
-            the long-term resilience of ecosystems.
-          </p>
+          <h1 className="text-3xl md:text-3xl font-bold text-green-800 leading-tight mb-6">
+            Sustainable Farming for
+            <span className="block text-blue-500">Future Generations</span>
+          </h1>
+{/*           
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+            We grow premium, sustainable fruits while regenerating nature at scale throughout the Iberian Peninsula.
+          </p> */}
         </motion.div>
 
-        {/* See More / See Less Button */}
-        <button
-          onClick={toggleText}
-          className="text-blue-600 mt-4 font-semibold hover:underline"
-        >
-          {isExpanded ? "See Less" : "See More"}
-        </button>
-      </motion.div>
+        {/* Interactive Info Points */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          {infoPoints.map((point, index) => (
+            <motion.div
+              key={point.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ 
+                opacity: isVisible ? 1 : 0, 
+                y: isVisible ? 0 : 20 
+              }}
+              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+              className={`
+                relative overflow-hidden rounded-xl p-6 cursor-pointer
+                ${activePoint === point.id ? 'bg-white shadow-lg' : 'bg-white/50 hover:bg-white/80'} 
+                transition-all duration-300 ease-in-out
+              `}
+              onClick={() => setActivePoint(activePoint === point.id ? null : point.id)}
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-green-100 text-2xl">
+                  {point.icon}
+                </div>
+                
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold text-green-800 mb-2 flex items-center gap-2">
+                    {point.title}
+                    <motion.span
+                      animate={{ rotate: activePoint === point.id ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="text-blue-500 text-sm"
+                    >
+                      ↓
+                    </motion.span>
+                  </h3>
+                  
+                  <AnimatePresence>
+                    {activePoint === point.id && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <p className="text-gray-600">{point.description}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
-      {/* Decorative Lines - Hidden on small screens */}
-      <motion.div
-        variants={staggerContainer}
-        initial="hidden"
-        animate={controls}
-        className="absolute inset-0 pointer-events-none hidden sm:block"
-      >
+        {/* Call to Action */}
         <motion.div
-          variants={fadeInUp}
-          className="absolute top-16 right-24 w-32 h-px bg-blue-100 transform rotate-45"
-        ></motion.div>
-        <motion.div
-          variants={fadeInUp}
-          className="absolute top-1/3 left-24 w-32 h-px bg-blue-100 transform -rotate-45"
-        ></motion.div>
-      </motion.div>
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-center"
+        >
+          {/* <button className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+            Discover Our Approach
+          </button> */}
+          
+          {/* <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+            className="mt-6 text-sm text-gray-500"
+          >
+            Join the movement for sustainable agriculture in the Iberian Peninsula
+          </motion.p> */}
+        </motion.div>
+      </div>
     </div>
   );
 };

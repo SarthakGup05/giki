@@ -1,158 +1,130 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import Slider from 'react-slick';
+import React, { useState, useEffect, useMemo } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { ChevronLeft, ChevronRight } from "lucide-react"; // Import icons
 
 const FarmsCat = [
   {
     id: 1,
-    title: "Fruit farms",
-    description: "taste our products made from fresh fruits",
+    title: "Fruit Farms",
+    description: "Taste our products made from fresh fruits",
     image: "/assets/images/SliderImages/2.1.jpg",
     route: "/gikijoy-farm/food-products",
+    color: "from-orange-600 to-yellow-400",
+    icon: "🍎",
   },
   {
     id: 2,
-    title: "Aqua farms",
-    description: "EXPERIENCE THE FARM FRESHNESS",
+    title: "Aqua Farms",
+    description: "Experience the farm freshness",
     image: "/assets/images/page banner/aqua banner.jpg",
     route: "/param-aqua-farm",
+    color: "from-blue-600 to-cyan-400",
+    icon: "🐟",
   },
   {
     id: 3,
-    title: "Hemp farms",
-    description: "More products Coming soon !",
+    title: "Hemp Farms",
+    description: "More products coming soon!",
     image: "/assets/images/page banner/hemp farms.jpg",
     route: "/gikijoy-farm/corporate-gifts",
+    color: "from-green-600 to-emerald-400",
+    icon: "🌿",
   },
   {
     id: 4,
-    title: "Dairy farms",
-    description: "products Coming soon !",
+    title: "Dairy Farms",
+    description: "Products coming soon!",
     image: "/assets/images/page banner/dairy farms.jpg",
-    route: "/gikijoy-farm",
-    comingSoon: true, // Add a flag to identify the "Coming Soon" card
+    route: "/gikijoy-dairy-farm",
+    comingSoon: true,
+    color: "from-sky-600 to-indigo-400",
+    icon: "🥛",
   },
 ];
 
+const CustomPrevArrow = (props) => (
+  <button
+    {...props}
+    className="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:bg-gray-700 transition-all z-10"
+  >
+    <ChevronLeft size={20} />
+  </button>
+);
+
+const CustomNextArrow = (props) => (
+  <button
+    {...props}
+    className="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:bg-gray-700 transition-all z-10"
+  >
+    <ChevronRight size={20} />
+  </button>
+);
+
 const CategorySection = () => {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isDesktop = screenWidth >= 1024;
+
+  const slidesToShow = useMemo(
+    () => (screenWidth >= 1280 ? 3 : screenWidth >= 768 ? 2 : 1),
+    [screenWidth]
+  );
+
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow,
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
+      { breakpoint: 1280, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 1 } },
     ],
   };
 
-  // Using a media query to detect screen size
-  const isDesktop = window.innerWidth >= 1024;
-
-  // Reorder FarmsCat for small screens
-  const reorderedFarmsCat = isDesktop ? FarmsCat : [FarmsCat[1], FarmsCat[0], FarmsCat[2], FarmsCat[3]];
-
   return (
-    <section className="py-16 bg-gray-100">
-      <div className="container mx-auto px-6 md:px-12 text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-4">Explore our variety farms</h2>
-        <p className="text-lg text-gray-600 max-w-xl mx-auto mb-12">
-          Explore our variety of farms and find the perfect gift for your loved ones.
-        </p>
+    <section className="py-16 bg-gradient-to-b from-gray-50 to-gray-100">
+      <div className="container mx-auto px-6 lg:px-12 text-center">
+        <motion.div initial="hidden" animate="visible" className="mb-12">
+          <motion.h2 className="text-4xl md:text-3xl font-bold text-gray-800 mb-4">
+            Explore Our Variety Farms
+          </motion.h2>
+          <motion.div className="h-1 bg-yellow-500 mx-auto mb-6 w-24" />
+          <motion.p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Discover our diverse range of sustainable farms offering premium quality products.
+          </motion.p>
+        </motion.div>
 
         {isDesktop ? (
-          // Desktop: Slider
-          <Slider {...settings}>
-            {FarmsCat.map((farm, index) => (
-              <motion.div
-                key={index}
-                className="relative rounded-lg overflow-hidden shadow-lg bg-white mx-4 hover:shadow-2xl transform transition-all duration-300"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                whileHover={{ scale: 1.05 }}
-                transition={{ delay: index * 0.2 }}
-              >
-                <img
-                  src={farm.image}
-                  alt={farm.title}
-                  className="w-full h-56 object-cover transition-transform duration-500 ease-in-out"
-                />
-                {/* Overlay for hover effect */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 hover:opacity-40 transition-opacity duration-300"></div>
-
-                {/* "Coming Soon" Badge */}
-                {farm.comingSoon && (
-                  <div className="absolute top-4 right-4 bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-medium">
-                    Coming Soon
-                  </div>
-                )}
-
-                {/* Text Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-justify text-sm text-white">
-                  <h3 className="text-xl font-mono mt-12">{farm.title}</h3>
-                  <p className="text-sm mb-1 font-sans"></p>
-                  <Link to={farm.route}>
-                    <motion.button
-                      className="inline-block mt-4 rounded-full bg-yellow-500 text-black py-2 px-4 shadow-md hover:bg-orange-600 transition duration-300 font-medium"
-                      whileHover={{ scale: 1.1 }}
-                    >
-                      View Details
-                    </motion.button>
-                  </Link>
+          <div className="relative">
+            <Slider {...settings} className="px-4">
+              {FarmsCat.map((farm) => (
+                <div key={farm.id} className="px-3">
+                  <FarmCard farm={farm} />
                 </div>
-              </motion.div>
-            ))}
-          </Slider>
+              ))}
+            </Slider>
+          </div>
         ) : (
-          // Small Screens: Grid Layout
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {reorderedFarmsCat.map((farm, index) => (
-              <motion.div
-                key={index}
-                className="relative rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-2xl transform transition-all duration-300"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                whileHover={{ scale: 1.05 }}
-                transition={{ delay: index * 0.2 }}
-              >
-                <img
-                  src={farm.image}
-                  alt={farm.title}
-                  className="w-full h-56 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 hover:opacity-40 transition-opacity duration-300"></div>
-
-                {/* "Coming Soon" Badge */}
-                {farm.comingSoon && (
-                  <div className="absolute top-4 right-4 bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-medium">
-                    Coming Soon
-                  </div>
-                )}
-
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-left text-white">
-                  <h3 className="pr-6 text-sm font-mono mt-14">{farm.title}</h3>
-                  {/* <p className="text-sm mb-4">{farm.description}</p> */}
-                  <Link to={farm.route}>
-                    <motion.button
-                      className="inline-block mt-4 rounded-full bg-yellow-500 text-black text-xs py-2 px-4 shadow-md hover:bg-orange-600 transition duration-300 font-medium"
-                      whileHover={{ scale: 1.1 }}
-                    >
-                      View Details
-                    </motion.button>
-                  </Link>
-                </div>
-              </motion.div>
+            {FarmsCat.map((farm) => (
+              <FarmCard key={farm.id} farm={farm} />
             ))}
           </div>
         )}
@@ -160,5 +132,43 @@ const CategorySection = () => {
     </section>
   );
 };
+
+const FarmCard = ({ farm }) => (
+  <motion.div
+    className="relative rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-all duration-500 group h-72 md:h-80"
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+  >
+    <div className="absolute top-4 left-4 z-10 w-10 h-10 rounded-full bg-white/80 flex items-center justify-center text-xl shadow-md">
+      {farm.icon}
+    </div>
+
+    {farm.comingSoon && (
+      <div className="absolute top-4 right-4 z-10 bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+        Coming Soon
+      </div>
+    )}
+
+    <img
+      src={farm.image}
+      alt={farm.title}
+      className="h-full w-full object-cover object-center transform transition-transform duration-700 group-hover:scale-110"
+    />
+
+    <div className="absolute inset-0 flex flex-col justify-end p-5 z-10 bg-gradient-to-t from-black/60 to-transparent">
+      <h3
+        className="text-xl md:text-2xl font-bold text-white mb-2 opacity-0 group-hover:opacity-100 transition-all duration-500"
+      >
+        {farm.title}
+      </h3>
+      <Link
+        to={farm.route}
+        className="bg-yellow-500 text-white px-2 py-2 rounded-full text-sm font-semibold shadow-md opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-5 transition-all duration-500"
+      >
+        View Details →
+      </Link>
+    </div>
+  </motion.div>
+);
 
 export default CategorySection;

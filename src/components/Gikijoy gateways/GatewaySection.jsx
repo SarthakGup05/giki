@@ -63,13 +63,13 @@ const GetawaySection = () => {
     <section className="py-16 bg-gray-100">
       <div className="container mx-auto px-6 md:px-12 text-center">
         <h2 className="text-4xl font-bold text-gray-800 mb-4">Your Next Getaways</h2>
-        <p className="text-lg text-gray-600 max-w-xl mx-auto mb-12">
+        <p className="text-lg text-gray-600 max-w-xl mx-auto mb-12 leading-tight">
           Explore our exclusive getaways in Uttarakhand, Goa, Punjab, and Uttar Pradesh. Discover serene landscapes, vibrant nightlife, and authentic experiences.
         </p>
 
         {isDesktop ? (
           // Desktop: Slider
-          <Slider {...settings}>
+          <Slider {...settings} >
             {getaways.map((getaway, index) => (
               <motion.div
                 key={index}

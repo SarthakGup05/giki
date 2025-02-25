@@ -6,7 +6,7 @@ import { FaWhatsapp } from "react-icons/fa";
 const routes = [
   {
     id: 1,
-    title: "GikiJoy Getaways",
+    title: "Getaways",
     description:
       "Exclusive getaways with unique experiences, relaxation, and adventure.",
     image: "./assets/images/SliderImages/travel.jpg",
@@ -14,7 +14,7 @@ const routes = [
   },
   {
     id: 2,
-    title: "GikiJoy Agro Tourism",
+    title: "Agro Tourism",
     description: "",
     image: "/assets/images/page banner/farm logo.jpg",
     route: "/gikijoy-farm",
@@ -28,9 +28,9 @@ const routes = [
   // },
   {
     id: 3,
-    title: "GikiJoy Products",
+    title: "Farm Produces",
     description: "Experience the freshness with our products.",
-    image: "/assets/images/page banner/our products.jpg",
+    image: "/assets/images/page banner/fruit banner.jpg",
     route: "/gikijoy-products",
   },
 ];
