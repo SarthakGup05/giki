@@ -33,6 +33,14 @@ const routes = [
     image: "/assets/images/page banner/fruit banner.jpg",
     route: "/gikijoy-products",
   },
+  {
+    id: 4,
+    title: "Joy of gifting",
+    description: "Gift your loved ones with our exclusive gift hampers.",
+    image: "/assets/images/page banner/gift.jpg",
+    route: "/gikijoy-gifts",
+  },
+ 
 ];
 
 const RouteCards = () => {

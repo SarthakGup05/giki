@@ -80,7 +80,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h5 className="text-xl font-bold mb-4">GikiJoy Products</h5>
             <ul>
               <li className="mb-2">
@@ -89,7 +89,7 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
         
         {/* Horizontal Links (new line) */}

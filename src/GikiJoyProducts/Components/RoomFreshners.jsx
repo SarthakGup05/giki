@@ -1,138 +1,87 @@
 import React from "react";
-import Slider from "react-slick";
 import { Eye } from "lucide-react";
 import { Link } from "react-router-dom";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
-const RoomFreshnerCategoryCards = () => {
+const FruitProductCards = () => {
+  // Updated products to show Amla Candy and Mango Tin Cans
   const products = [
     {
-      title: "White Wood",
-      price: "₹200",
-      tag: "Premium Selection",
-      imageUrl: "/assets/images/room freshners/1.jpg",
-      route: "/gikijoy-products/room-freshner",
-    },
-    {
-      title: "Golden Dust",
+      title: "Premium Amla Candy",
       price: "₹150",
       tag: "Best Seller",
-      imageUrl: "/assets/images/room freshners/2.jpg",
-      route: "/gikijoy-products/room-freshner",
-    },
-    {
-      title: "Oudh Fancy",
-      price: "₹100",
-      tag: "New Arrival",
-      imageUrl: "/assets/images/room freshners/3.jpg",
-      route: "/gikijoy-products/room-freshner",
-    },
-    {
-      title: "Romania Garden",
-      price: "₹250",
-      tag: "Limited Edition",
-      imageUrl: "/assets/images/room freshners/4.jpg",
-      route: "/gikijoy-products/room-freshner",
-    },
-    {
-      title: "Eminence",
-      price: "₹200",
-      tag: "Premium Selection",
-      imageUrl: "/assets/images/room freshners/5.jpg",
-      route: "/gikijoy-products/room-freshner",
-    },
-    {
-      title: "Mango Cans",
-      price: "₹150",
-      tag: "Best Seller",
-      imageUrl:
-        "/assets/images/mango shoot/GikiJoy Cans/DASHEHRI  Slices in Pulp/GKJPulp2.jpg",
-      route: "/gikijoy-farm/food-products",
-    },
-    {
-      title: "Aamla Candy",
-      price: "₹100",
-      tag: "New Arrival",
       imageUrl: "/assets/images/MangoProduct/cover- ac1.png",
-      route: "/gikijoy-farm/food-products",
+      route: "/gikijoy-farm/product/candy/1",
+      description: "Sweet and tangy with natural goodness"
     },
+    {
+      title: "Alphonso Mango Tin",
+      price: "₹200",
+      tag: "Seasonal Special",
+      imageUrl: "/assets/images/mango shoot/GikiJoy Cans/DASHEHRI  Slices in Pulp/GKJPulp2.jpg",
+      route: "/gikijoy-farm/product/mango-cans/2",
+      description: "Preserved sweetness of premium Alphonso mangoes"
+    }
   ];
 
-  // Slick slider settings
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    responsive: [
-      {
-        breakpoint: 1024, // Tablet
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 768, // Mobile
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
-
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 py-16">
-      {/* Header */}
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-yellow-600 to-orange-600">
-          Product Categories
+    <div className="w-full max-w-4xl mx-auto px-4 py-8">
+      {/* Header with modern minimalist design */}
+      <div className="text-center mb-8">
+        <h2 className="text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-orange-500">
+          Signature Products
         </h2>
-        <p className="text-gray-600 text-lg">
-          Explore a variety of categories crafted with care.
+        <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mb-4"></div>
+        <p className="text-gray-600 text-base max-w-md mx-auto">
+          Traditional flavors prepared with modern techniques
         </p>
       </div>
 
-      {/* Slider */}
-      <Slider {...settings} className="slick-slider">
+      {/* Smaller card layout with grid */}
+      <div className="grid grid-cols-2 gap-4">
         {products.map((product, index) => (
-          <div key={index} className="px-2">
-            {/* Card */}
-            <div className="group relative bg-white rounded-lg shadow-lg overflow-hidden">
-              {/* Image */}
-              <div className="relative">
-                <img
-                  src={product.imageUrl}
-                  alt={product.title}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-500"></div>
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-sm font-medium text-gray-900 rounded-full shadow-md">
-                    {product.tag}
-                  </span>
-                </div>
+          <div key={index} className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+            {/* Image with overlay */}
+            <div className="relative aspect-[4/3]">
+              <img
+                src={product.imageUrl}
+                alt={product.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+              
+              {/* Tag */}
+              <div className="absolute top-2 right-2">
+                <span className="px-2 py-1 bg-white/90 backdrop-blur-sm text-xs font-medium text-gray-900 rounded-full shadow-sm">
+                  {product.tag}
+                </span>
               </div>
+            </div>
 
-              {/* Overlay Info */}
-              <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 via-black/50 to-transparent text-white opacity-0 group-hover:opacity-100 transition duration-500">
-                <h3 className="text-lg font-semibold mb-2">{product.title}</h3>
-                <Link to={product.route}>
-                  <button className="mt-2 px-4 py-2 bg-yellow-500 text-white rounded-lg shadow-md hover:bg-yellow-600 transition">
-                    <Eye className="w-5 h-5 inline mr-2" />
-                    View Details
-                  </button>
-                </Link>
+            {/* Content */}
+            <div className="absolute inset-x-0 bottom-0 p-3 text-white">
+              <div className="flex justify-between items-start mb-1">
+                <h3 className="text-sm font-bold">{product.title}</h3>
+                {/* <span className="text-sm font-semibold">{product.price}</span> */}
               </div>
+              
+              <p className="text-white/80 text-xs mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {product.description}
+              </p>
+              
+              <Link to={product.route} className="inline-block w-full">
+                <button className="w-full px-2 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded text-xs shadow-sm hover:from-amber-600 hover:to-orange-600 transition flex items-center justify-center gap-1 font-medium">
+                  <Eye className="w-3 h-3" />
+                  View Details
+                </button>
+              </Link>
             </div>
           </div>
         ))}
-      </Slider>
+      </div>
     </div>
   );
 };
 
-export default RoomFreshnerCategoryCards;
+export default FruitProductCards;

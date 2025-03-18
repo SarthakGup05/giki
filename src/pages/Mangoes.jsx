@@ -8,7 +8,7 @@ const mangoContent = [
     title: "Ambika",
     price: "₹299",
     imgSrc:
-      "/assets/images/GikiJoy Edited Sku Images/JPEG/IMG-20240626-WA0026.jpg",
+      "/assets/images/new imges/aambika.png",
     description:
       "A premium mango variety known for its rich aroma and juicy sweetness, grown with care for an authentic taste.",
   },
@@ -17,7 +17,7 @@ const mangoContent = [
     title: "Dushheri",
     price: "₹399",
     imgSrc:
-      "/assets/images/GikiJoy Edited Sku Images/JPEG/IMG-20240626-WA0027.jpg",
+      "/assets/images/new imges/dusherri.png",
     description:
       "The iconic Malihabadi Dussehri mango, renowned for its perfect balance of sweetness and tartness with a GI tag.",
   },

@@ -6,29 +6,29 @@ import "slick-carousel/slick/slick-theme.css";
 import { useNavigate } from "react-router-dom";
 
 const slides = [
-  {
-    id: 1,
-    title: " Aamla candy",
-    subtitle: "Premium quality from our farms",
-    description: "Our Aamla candy is made from the best Aamla fruits from our farms.",
-    image: "/assets/images/page banner/our products.jpg",
-    alt: "Aamla Candy",
-    badge: "New Arrival",
-    link: "/gikijoy-farm/product/candy/1"
-  },
   // {
-  //   id: 2,
-  //   title: "Room Fresheners",
-  //   subtitle: "Natural & Long-lasting",
-  //   description: "Discover our diverse range of room fresheners, crafted with natural ingredients for a refreshing and sustainable experience.",
-  //   image: "/assets/images/page banner/Room freshner.jpg",
-  //   alt: "Room Fresheners",
+  //   id: 1,
+  //   title: " Aamla candy",
+  //   subtitle: "Premium quality from our farms",
+  //   description: "Our Aamla candy is made from the best Aamla fruits from our farms.",
+  //   image: "/assets/images/page banner/our products.jpg",
+  //   alt: "Aamla Candy",
   //   badge: "New Arrival",
-  //   link: "/gikijoy-products/room-freshner",
-  // }
+  //   link: "/gikijoy-farm/product/candy/1"
+  // },
+  {
+    id: 2,
+    title: "Room Fresheners",
+    subtitle: "Natural & Long-lasting",
+    description: "Discover our diverse range of room fresheners, crafted with natural ingredients for a refreshing and sustainable experience.",
+    image: "/assets/images/page banner/Room freshner.jpg",
+    alt: "Room Fresheners",
+    badge: "New Arrival",
+    link: "/gikijoy-products/room-freshner",
+  }
 ];
 
-const GikijoyProductsSlider = () => {
+const GikijoyGiftSlider = () => {
   const navigate = useNavigate();
   
   const settings = {
@@ -162,4 +162,4 @@ const GikijoyProductsSlider = () => {
   );
 };
 
-export default GikijoyProductsSlider;
+export default GikijoyGiftSlider;

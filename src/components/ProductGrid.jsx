@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 export const ProductGrid = ({ products, category }) => {
   return (
-    <div className="container mx-auto p-4 sm:p-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <div className="container mx-auto px-4 py-8">
+      {/* Modified grid with consistent 2 columns on small screens */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} category={category} />
         ))}
@@ -14,106 +15,83 @@ export const ProductGrid = ({ products, category }) => {
 };
 
 const ProductCard = ({ product, category }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-
-  // Function to check if description needs "See More" button
-  const needsExpansion = product.description && product.description.length > 100;
 
   return (
     <div
-      className="group relative bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+      className="group bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Badge */}
+      {/* Badge - positioned like in the reference */}
       {product.isNew && (
-        <div className="absolute top-4 left-4 z-10 bg-yellow-600 text-black px-2 py-1 rounded-full text-xs font-semibold">
+        <div className="absolute top-2 right-2 z-10 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-medium">
           New
         </div>
       )}
+      
+      {/* Sale badge */}
+      {product.onSale && (
+        <div className="absolute top-2 right-2 z-10 bg-blue-400 text-white px-3 py-1 rounded-full text-xs font-medium">
+          Save {product.discountPercent}%
+        </div>
+      )}
+      
+      {/* Sold out badge */}
+      {product.soldOut && (
+        <div className="absolute top-2 right-2 z-10 bg-gray-800 text-white px-3 py-1 rounded-full text-xs font-medium">
+          Sold out
+        </div>
+      )}
 
-      {/* Image Section - Square 1:1 Aspect Ratio */}
-      <div className="relative aspect-square w-full overflow-hidden">
+      {/* Image container - clean white background, centered image */}
+      <div className="relative pt-[100%] bg-gray-100 group-hover:bg-gray-200 overflow-hidden">
         <img
           src={product.imgSrc}
           alt={product.title}
-          className={`w-full h-full object-cover transition-transform duration-700 ${
+          className={`absolute inset-0 w-full h-full object-contain p-6 transition-transform duration-500 ${
             isHovered ? 'scale-110' : 'scale-100'
           }`}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
       </div>
 
-      {/* Details Section */}
-      <div className="p-5">
-        <div className="flex justify-between items-start mb-3">
-          <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
-            {product.title}
-          </h3>
-          <div className="flex flex-col items-end">
-            <span className="text-sm text-gray-500 line-through">{product.originalPrice}</span>
-            <span className="text-lg font-bold text-orange-600">{product.price}</span>
-          </div>
+      {/* Product details - centered, clean layout */}
+      <div className="p-4 text-center flex-grow flex flex-col bg-gray-100">
+        {/* Star rating */}
+        <div className="flex justify-center mb-2 text-yellow-400">
+          <span className="flex">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <svg
+                key={star}
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+            ))}
+          </span>
         </div>
 
-        {product.description && (
-          <div className="space-y-3">
-            <div className="relative">
-              <p
-                className={`text-gray-600 text-sm transition-all duration-500 ease-in-out ${
-                  isExpanded ? 'line-clamp-none' : 'line-clamp-2'
-                }`}
-              >
-                {product.description}
-              </p>
-              {needsExpansion && (
-                <button
-                  onClick={() => setIsExpanded(!isExpanded)}
-                  className="inline-flex items-center mt-2 text-blue-600 text-sm font-semibold hover:text-blue-700 transition-all duration-300 group/button"
-                >
-                  <span className="relative">
-                    {isExpanded ? 'See Less' : 'See More'}
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform origin-left scale-x-0 transition-transform duration-300 group-hover/button:scale-x-100" />
-                  </span>
-                  <svg
-                    className={`ml-1 w-4 h-4 transition-transform duration-300 ${
-                      isExpanded ? 'rotate-180' : 'rotate-0'
-                    }`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-              )}
-            </div>
-          </div>
-        )}
+        {/* Product title */}
+        <h3 className="text-base font-semibold text-gray-900 mb-2">
+          {product.title}
+        </h3>
+        
+        {/* Removed price section as requested */}
       </div>
 
-      {/* Action Buttons */}
-      <div className="flex border-t border-gray-100">
+      {/* Action button - single view details button */}
+      <div className="px-4 pb-4 mt-auto bg-gray-100">
         <Link
           to={`/gikijoy-farm/product/${category}/${product.id}`}
-          className="w-1/2 text-center py-4 bg-yellow-400 text-black text-sm font-semibold transition-all duration-300 hover:bg-yellow-700 flex items-center justify-center gap-2"
+          className="block w-full text-center py-2 bg-green-600 text-white rounded-md text-sm font-medium transition-colors duration-300 hover:bg-green-700"
         >
           View Details
         </Link>
-        <a
-          href={`https://wa.me/${product.whatsappNumber || "7817821976"}?text=I'm interested in ${product.title}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-1/2 text-center py-4 bg-green-500 text-white text-sm font-semibold transition-all duration-300 hover:bg-green-600 flex items-center justify-center gap-2"
-        >
-          Buy on WhatsApp
-        </a>
       </div>
     </div>
   );

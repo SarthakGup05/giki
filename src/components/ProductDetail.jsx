@@ -28,7 +28,7 @@ const ProductDetail = () => {
       imgSrc: "path-to-reviewer-image",
     },
   ]);
-  
+
   const categoryKey = category.replace(/-([a-z])/g, (match, letter) =>
     letter.toUpperCase()
   );
@@ -120,7 +120,7 @@ const ProductDetail = () => {
                   className="w-full h-80 object-contain transform transition-transform duration-500 hover:scale-105"
                 />
               </div>
-              
+
               {/* Thumbnail Gallery */}
               <div className="flex space-x-2 justify-center">
                 {productImages.map((img, index) => (
@@ -148,7 +148,7 @@ const ProductDetail = () => {
                     <span className="text-gray-500 text-sm">(24 reviews)</span>
                   </div>
                 </div>
-                
+
                 <span className="text-2xl font-bold text-orange-600">{product.price}</span>
               </div>
 
@@ -168,31 +168,10 @@ const ProductDetail = () => {
                 <h3 className="text-lg font-semibold mb-2 text-gray-700">Description</h3>
                 <p className="text-gray-600 leading-relaxed">{product.description}</p>
               </div>
-              
+
               {/* Quantity Selector */}
-              <div className="mb-6">
-                <label htmlFor="quantity" className="block text-sm font-medium text-gray-700 mb-2">
-                  Quantity
-                </label>
-                <div className="flex items-center w-32 h-10 border rounded-lg overflow-hidden">
-                  <button
-                    onClick={() => handleQuantityChange(-1)}
-                    className="w-10 h-full flex items-center justify-center bg-gray-50 hover:bg-gray-100 transition-colors"
-                  >
-                    <FaMinus className="text-gray-600 text-xs" />
-                  </button>
-                  <span className="flex-1 h-full flex items-center justify-center font-medium text-gray-800">
-                    {quantity}
-                  </span>
-                  <button
-                    onClick={() => handleQuantityChange(1)}
-                    className="w-10 h-full flex items-center justify-center bg-gray-50 hover:bg-gray-100 transition-colors"
-                  >
-                    <FaPlus className="text-gray-600 text-xs" />
-                  </button>
-                </div>
-              </div>
-              
+             
+
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <Link to='/contactus' className="flex-1">
@@ -201,9 +180,9 @@ const ProductDetail = () => {
                     <span>Buy It Now</span>
                   </button>
                 </Link>
-                
+
                 <a
-                  href="https://wa.me/+917817821976" 
+                  href="https://wa.me/+917817821976"
                   className="flex-1 bg-green-500 text-white font-medium px-6 py-3 rounded-lg hover:bg-green-600 transition-all duration-300 flex items-center justify-center space-x-2 shadow-sm hover:shadow"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -212,7 +191,7 @@ const ProductDetail = () => {
                   <span>Order on WhatsApp</span>
                 </a>
               </div>
-              
+
               {/* Quick Info */}
               <div className="border-t border-gray-100 pt-4">
                 <div className="grid grid-cols-2 gap-4 text-sm">
@@ -247,166 +226,88 @@ const ProductDetail = () => {
               <Tab className="px-6 py-3 font-medium text-gray-700 cursor-pointer focus:outline-none">
                 Product Details
               </Tab>
-              <Tab className="px-6 py-3 font-medium text-gray-700 cursor-pointer focus:outline-none">
-                Reviews ({reviews.length})
-              </Tab>
+
             </TabList>
 
             <TabPanel>
               <div className="bg-white rounded-xl shadow-sm p-6 fade-in">
-                <h3 className="text-xl font-semibold mb-4 text-gray-800">Product Specifications</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
-                  {product.brand && (
-                    <div className="flex border-b pb-2">
-                      <span className="font-medium text-gray-500 w-32">Brand</span>
-                      <span className="text-gray-800">{product.brand}</span>
-                    </div>
-                  )}
-                  {product.netQuantity && (
-                    <div className="flex border-b pb-2">
-                      <span className="font-medium text-gray-500 w-32">Net Quantity</span>
-                      <span className="text-gray-800">{product.netQuantity}</span>
-                    </div>
-                  )}
-                  {product.flavor && (
-                    <div className="flex border-b pb-2">
-                      <span className="font-medium text-gray-500 w-32">Flavor</span>
-                      <span className="text-gray-800">{product.flavor}</span>
-                    </div>
-                  )}
-                  {product.containerType && (
-                    <div className="flex border-b pb-2">
-                      <span className="font-medium text-gray-500 w-32">Container Type</span>
-                      <span className="text-gray-800">{product.containerType}</span>
-                    </div>
-                  )}
-                  <div className="flex border-b pb-2">
-                    <span className="font-medium text-gray-500 w-32">SKU</span>
-                    <span className="text-gray-800">PRD-{product.id}</span>
+                <h3 className="text-xl font-semibold mb-4 text-gray-800">Product Details</h3>
+
+                {/* General Description */}
+                {product.description && (
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold mb-2 text-gray-700">Description</h4>
+                    <p className="text-gray-600 leading-relaxed">{product.description}</p>
                   </div>
-                </div>
-              </div>
-            </TabPanel>
-            
-            <TabPanel>
-              <div className="bg-white rounded-xl shadow-sm p-6 fade-in">
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-                  {/* Reviews Summary */}
-                  <div className="lg:col-span-2 p-4 bg-gray-50 rounded-lg">
-                    <h3 className="text-xl font-semibold mb-4 text-gray-800">Customer Reviews</h3>
-                    <div className="flex items-center mb-4">
-                      <div className="flex items-center mr-2">
-                        {renderStars(4)}
-                      </div>
-                      <span className="text-gray-600">Based on {reviews.length} reviews</span>
-                    </div>
-                    
-                    <div className="space-y-2 mb-6">
-                      {[5, 4, 3, 2, 1].map((star) => (
-                        <div key={star} className="flex items-center">
-                          <div className="w-8 text-sm text-gray-600">{star} star</div>
-                          <div className="flex-1 mx-3 h-2 rounded-full bg-gray-200 overflow-hidden">
-                            <div 
-                              className="h-full bg-yellow-400" 
-                              style={{ width: star === 5 ? '70%' : star === 4 ? '20%' : '10%' }}
-                            ></div>
-                          </div>
-                          <div className="w-8 text-sm text-gray-600 text-right">
-                            {star === 5 ? '70%' : star === 4 ? '20%' : '10%'}
-                          </div>
-                        </div>
+                )}
+
+                {/* Ingredients (Only show if available) */}
+                {product.ingredients && product.ingredients.length > 0 && (
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold mb-2 text-gray-700">Ingredients</h4>
+                    <ul className="list-disc pl-5 text-gray-600">
+                      {product.ingredients.map((item, index) => (
+                        <li key={index}>{item}</li>
                       ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Nutrition Facts (Only show if available) */}
+                {product.nutrition && Object.keys(product.nutrition).length > 0 && (
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold mb-2 text-gray-700">Nutritional Information</h4>
+                    <ul className="list-disc pl-5 text-gray-600">
+                      {Object.entries(product.nutrition).map(([key, value], index) => (
+                        <li key={index} className="capitalize">{`${key.replace(/([A-Z])/g, " $1")}: ${value}`}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Storage Instructions (Only show if available) */}
+                {product.storage && (
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold mb-2 text-gray-700">Storage Instructions</h4>
+                    <p className="text-gray-600">{product.storage}</p>
+                  </div>
+                )}
+
+                {/* Manufacturer Details (Only show if available) */}
+                {product.manufacturedBy && (
+                  <div className="mb-6">
+                    <h4 className="text-sm font-medium mb-2 text-gray-700">Manufactured By</h4>
+                    <p className="text-gray-600">{product.manufacturedBy}</p>
+                  </div>
+                )}
+
+                {/* Expiry & Packaging Details (Only show if available) */}
+                {product.packagedOn && product.useBefore && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="text-sm font-medium mb-2 text-gray-700">Packaged On</h4>
+                      <p className="text-gray-600">{product.packagedOn}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium mb-2 text-gray-700">Best Before</h4>
+                      <p className="text-gray-600">{product.useBefore}</p>
                     </div>
                   </div>
-                  
-                  {/* Reviews List and Form */}
-                  <div className="lg:col-span-3">
-                    <div className="mb-8">
-                      {reviews.length > 0 ? (
-                        <div className="space-y-6">
-                          {reviews.map((review) => (
-                            <div key={review.id} className="border-b pb-6">
-                              <div className="flex items-center mb-2">
-                                <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 font-bold mr-3">
-                                  {review.name.charAt(0)}
-                                </div>
-                                <div>
-                                  <h4 className="font-medium text-gray-800">{review.name}</h4>
-                                  <div className="flex items-center">
-                                    <div className="flex mr-2">
-                                      {renderStars(review.rating)}
-                                    </div>
-                                    <span className="text-xs text-gray-500">2 months ago</span>
-                                  </div>
-                                </div>
-                              </div>
-                              <p className="text-gray-600 mt-2">{review.text}</p>
-                            </div>
-                          ))}
-                        </div>
-                      ) : (
-                        <p className="text-gray-600 italic">No reviews yet. Be the first to review this product!</p>
-                      )}
+                )}
+
+                {/* GST & Contact Details (Only show if available) */}
+                {product.gst && product.email && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                      <h4 className="text-sm font-medium mb-2 text-gray-700">GST Number</h4>
+                      <p className="text-gray-600">{product.gst}</p>
                     </div>
-                    
-                    {/* Review Form */}
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h4 className="font-semibold text-lg mb-4 text-gray-800">Write a Review</h4>
-                      <form onSubmit={handleReviewSubmit} className="space-y-4">
-                        <div className="flex items-center mb-4">
-                          <p className="mr-3 text-sm font-medium text-gray-700">Your Rating:</p>
-                          <div className="flex text-lg cursor-pointer">
-                            {renderStars(5)}
-                          </div>
-                        </div>
-                        
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                          <div>
-                            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                            <input
-                              type="text"
-                              id="name"
-                              name="name"
-                              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all"
-                              placeholder="Your name"
-                              required
-                            />
-                          </div>
-                          <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                            <input
-                              type="email"
-                              id="email"
-                              name="email"
-                              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all"
-                              placeholder="Your email"
-                              required
-                            />
-                          </div>
-                        </div>
-                        
-                        <div>
-                          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Review</label>
-                          <textarea
-                            id="message"
-                            name="message"
-                            rows="4"
-                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all"
-                            placeholder="Share your experience with this product"
-                            required
-                          ></textarea>
-                        </div>
-                        
-                        <button
-                          type="submit"
-                          className="w-full sm:w-auto px-6 py-3 bg-orange-500 text-white font-medium rounded-lg hover:bg-orange-600 transition-colors shadow-sm"
-                        >
-                          Submit Review
-                        </button>
-                      </form>
+                    <div>
+                      <h4 className="text-sm font-medium mb-2 text-gray-700">Contact Email</h4>
+                      <p className="text-gray-600">{product.email}</p>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             </TabPanel>
           </Tabs>

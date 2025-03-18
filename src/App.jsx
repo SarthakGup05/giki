@@ -34,6 +34,8 @@ import Aquafarms from "./AquaFarms/Components/pages/Aquafarms";
 import GikijoyProductsHome from "./GikiJoyProducts/Components/Home";
 import RoomProduct from "./GikiJoyProducts/Components/RoomFreshnerGrid";
 import ComingSoonPage from "./pages/ComingSoonPage";
+import GiftHome from "./pages/GiftHome";
+import Hampers from "./gikijoyGifts/components/MangoBaskets";
 
 // Initialize AOS animations
 AOS.init();
@@ -177,7 +179,10 @@ function AppContent() {
           <Route path="/gikijoy-products/room-freshner" element={<RoomProduct />} />
           {/* Dairy farm routes */}
           <Route path="/gikijoy-dairy-farm" element={<ComingSoonPage />} />
-         
+         {/* gikijoy gifting */}
+          <Route path="/gikijoy-gifts" element={<GiftHome />} />
+          <Route path="/gikijoy-gifts/products" element={<Hampers />} />
+
         </Routes>
       </main>
 

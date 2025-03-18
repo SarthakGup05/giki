@@ -131,17 +131,18 @@ const productData = {
       imgSrc: "/assets/images/mango shoot/GikiJoy Corporate Gifts/0H2A9792.JPG",
     },
   ],
-  candy: [
+   candy: [
     {
       id: 1,
       title: "Aamla Candy",
       price: "₹299",
       imgSrc: "/assets/images/MangoProduct/cover- ac1.png",
-      description: "Boosts immunity, rich in antioxidants, and good for skin and hair. Made from 100% natural ingredients with no artificial color or preservatives.",
+      description:
+        "GikiJoy Amla Candy is a 100% natural, chemical-free treat made from handpicked amla grown in Uttar Pradesh. Rich in Vitamin C and antioxidants, it boosts immunity, promotes skin health, supports digestion, and aids in detoxification. Enjoy a sweet and tangy flavor with no artificial colors or preservatives.",
       netWeight: "200 gm",
       ingredients: ["Amla berry", "Refined sugar"],
       nutrition: {
-        calories: "315kcal",
+        calories: "50-60 kcal per serving",
         totalFat: "0gm",
         saturatedFat: "0gm",
         transFat: "0gm",
@@ -150,9 +151,22 @@ const productData = {
         dietaryFiber: "5gm",
         sugar: "5gm",
         protein: "0.6gm",
-        vitaminC: "0mg",
+        vitaminC: "High in Vitamin C",
       },
-      storage: "Once open, refrigerate. Store in a dry and cool place.",
+      healthBenefits: [
+        "Boosts immunity with high Vitamin C content",
+        "Supports digestion and promotes gut health",
+        "Enhances skin health by reducing signs of aging",
+        "Aids in detoxification by flushing out toxins",
+        "Supports heart health by maintaining cholesterol levels",
+      ],
+      whyChoose: [
+        "Perfect for all ages – children, adults, and seniors",
+        "A delicious sweet and tangy snack",
+        "Convenient & ready-to-eat, ideal for travel and work",
+        "No artificial additives – free from preservatives and artificial flavors",
+      ],
+      storage: "Once opened, refrigerate. Store in a dry and cool place.",
       manufacturedBy: "GiKiJoy, 1/523 Jiamau, Hazratganj, Lucknow, Uttar Pradesh 226001",
       email: "contactGikijoy@gmail.com",
       gst: "09ABBFG3476E1ZF",
@@ -161,8 +175,8 @@ const productData = {
       brand: "GiKiJoy",
       isHealthy: true,
     },
-   
   ],
+  
   freshners: [
     {
       id: 1,
