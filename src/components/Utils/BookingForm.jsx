@@ -27,9 +27,9 @@ const BookingForm = ({ closeModal }) => {
           "Bhole Baba Ayurvedic Hospital and Research centre",
           "Aqua Beach Stays Ashwem",
         ],
-        "Please select a valid Getaway"
+        "Please select a valid getaways"
       )
-      .required("Getaway is required"),
+      .required("getaways is required"),
     checkin: Yup.date().required("Check-in date is required"),
     checkout: Yup.date()
       .min(Yup.ref("checkin"), "Check-out date must be after check-in date")
@@ -74,7 +74,7 @@ const BookingForm = ({ closeModal }) => {
         closeModal(); // Automatically close the modal
 
         setTimeout(() => {
-          navigate("/gikijoy-getaway/thankyou"); // Redirect to thank-you page
+          navigate("/gikijoy-getaways/thankyou"); // Redirect to thank-you page
         }, 100);
       } catch (error) {
         console.error("Failed to send email:", error);
@@ -90,7 +90,7 @@ const BookingForm = ({ closeModal }) => {
       {/* Toaster Component */}
       <Toaster position="top-center" reverseOrder={false} />
       <h1 className="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-8">
-        Book Your Next Getaway
+        Book Your Next getaways
         </h1>
         <form onSubmit={formik.handleSubmit} className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {/* Name */}
@@ -150,9 +150,9 @@ const BookingForm = ({ closeModal }) => {
             )}
           </div>
 
-          {/* Getaway */}
+          {/* getaways */}
           <div>
-          <label className="block mb-2 font-semibold text-gray-700">Getaway</label>
+          <label className="block mb-2 font-semibold text-gray-700">getaways</label>
             <select
               name="city"
             className={`w-full px-4 py-3 border rounded-md outline-none ${
@@ -162,7 +162,7 @@ const BookingForm = ({ closeModal }) => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             >
-              <option value="">Select a Getaway</option>
+              <option value="">Select a getaways</option>
             <option value="Sukoon Nature Retreat">Sukoon Nature Retreat</option>
             <option value="Chahal Farms">Chahal Farms</option>
             <option value="BN Resort">BN Resort</option>

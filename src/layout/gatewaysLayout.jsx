@@ -10,7 +10,7 @@ const GatewayNavbar = () => {
   const dropdownRef = useRef(null);
   const location = useLocation(); // Get the current route
 
-  const isGetawayRoute = location.pathname.startsWith("/gikijoy-getaway"); // Check if the route starts with "/gikijoy-getaway"
+  const isGetawayRoute = location.pathname.startsWith("/gikijoy-getaways"); // Check if the route starts with "/gikijoy-getaways"
 
   return (
     <>

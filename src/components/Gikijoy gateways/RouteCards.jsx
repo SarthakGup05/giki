@@ -20,7 +20,7 @@ const RouteCardsGateway = () => {
       <div className="container mx-auto px-6 md:px-12 text-center">
         <h2 className="text-4xl font-bold text-gray-800 mb-4">Explore Our Routes</h2>
         <p className="text-lg text-gray-600 max-w-xl mx-auto mb-12">
-          Discover Giki Farms and Giki Getaway for authentic experiences and exclusive getaways.
+          Discover Giki Farms and Giki getaways for authentic experiences and exclusive getaways.
         </p>
 
         <div className="grid grid-cols-1 gap-8">

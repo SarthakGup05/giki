@@ -131,7 +131,7 @@ const productData = {
       imgSrc: "/assets/images/mango shoot/GikiJoy Corporate Gifts/0H2A9792.JPG",
     },
   ],
-   candy: [
+  candy: [
     {
       id: 1,
       title: "Aamla Candy",
@@ -139,9 +139,10 @@ const productData = {
       imgSrc: "/assets/images/MangoProduct/cover- ac1.png",
       description:
         "GikiJoy Amla Candy is a 100% natural, chemical-free treat made from handpicked amla grown in Uttar Pradesh. Rich in Vitamin C and antioxidants, it boosts immunity, promotes skin health, supports digestion, and aids in detoxification. Enjoy a sweet and tangy flavor with no artificial colors or preservatives.",
-      netWeight: "200 gm",
+        netWeight: "200 gm",
       ingredients: ["Amla berry", "Refined sugar"],
       nutrition: {
+        servingSize: "30g (approximately 4-5 pieces)",
         calories: "50-60 kcal per serving",
         totalFat: "0gm",
         saturatedFat: "0gm",
@@ -151,7 +152,9 @@ const productData = {
         dietaryFiber: "5gm",
         sugar: "5gm",
         protein: "0.6gm",
-        vitaminC: "High in Vitamin C",
+        vitaminC: "600% DV",
+        iron: "2% DV",
+        calcium: "3% DV"
       },
       healthBenefits: [
         "Boosts immunity with high Vitamin C content",
@@ -159,24 +162,63 @@ const productData = {
         "Enhances skin health by reducing signs of aging",
         "Aids in detoxification by flushing out toxins",
         "Supports heart health by maintaining cholesterol levels",
+        "Improves eye health with natural antioxidants",
+        "Natural energy booster",
+        "Rich source of antioxidants"
       ],
       whyChoose: [
-        "Perfect for all ages – children, adults, and seniors",
-        "A delicious sweet and tangy snack",
-        "Convenient & ready-to-eat, ideal for travel and work",
-        "No artificial additives – free from preservatives and artificial flavors",
+        "Made from premium hand-picked Amla",
+        "100% natural ingredients",
+        "No artificial preservatives",
+        "Rich in Vitamin C",
+        "Traditional recipe with modern standards",
+        "Perfect for all age groups",
+        "Convenient packaging",
+        "Long shelf life without chemicals"
       ],
-      storage: "Once opened, refrigerate. Store in a dry and cool place.",
+      storage: "Store in a cool, dry place. After opening, keep in an airtight container and refrigerate.",
+      usage: [
+        "Consume directly as a healthy snack",
+        "Can be added to fruit salads",
+        "Ideal for post-workout energy boost",
+        "Perfect travel companion"
+      ],
       manufacturedBy: "GiKiJoy, 1/523 Jiamau, Hazratganj, Lucknow, Uttar Pradesh 226001",
       email: "contactGikijoy@gmail.com",
       gst: "09ABBFG3476E1ZF",
       packagedOn: "10th Dec 2024",
       useBefore: "12 months from the date of manufacture",
-      brand: "GiKiJoy",
       isHealthy: true,
-    },
+      ratings: {
+        average: 4.5,
+        total: 128,
+        distribution: {
+          5: 80,
+          4: 30,
+          3: 10,
+          2: 5,
+          1: 3
+        }
+      },
+      reviews: [
+        {
+          name: "Priya S.",
+          rating: 5,
+          date: "2024-03-15",
+          comment: "Excellent natural candy! Love the taste and health benefits."
+        },
+        {
+          name: "Rahul M.",
+          rating: 4,
+          date: "2024-03-10",
+          comment: "Great healthy alternative to regular candies."
+        }
+      ],
+      allergenInfo: "Processed in a facility that also processes nuts",
+      disclaimer: "Natural product color and taste may vary slightly across batches",
+      countryOfOrigin: "India"
+    }
   ],
-  
   freshners: [
     {
       id: 1,

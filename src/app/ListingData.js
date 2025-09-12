@@ -47,7 +47,7 @@ const listingData = [
     ],
     reviews: [
       { user: 'User3', rating: 5, comment: 'Peaceful and beautiful location, great for a relaxing break.' },
-      { user: 'User4', rating: 4, comment: 'Perfect for a weekend getaway, enjoyed the mountain views!' },
+      { user: 'User4', rating: 4, comment: 'Perfect for a weekend getaways, enjoyed the mountain views!' },
       // Additional reviews can be added here
     ],
     outOfStock: false,

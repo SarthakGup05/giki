@@ -103,7 +103,7 @@ const AquaBeach = () => {
             Located near Village Lokarka, Amritsar, Chahal Farms offers a
             peaceful retreat in the lush landscapes of Punjab. Whether you're
             seeking relaxation or adventure, this property provides an ideal
-            getaway amidst nature.
+            getaways amidst nature.
           </p>
         </div>
 

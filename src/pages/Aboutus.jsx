@@ -73,7 +73,7 @@ const AboutUs = () => {
                 city dwellers seeking peace and comfort amidst nature.
               </p>
               <a
-                href="https://www.gikijoy.com/gikijoy-getaway"
+                href="https://www.gikijoy.com/gikijoy-getaways"
                 className="inline-block px-6 py-3 bg-blue-500 text-white text-lg font-semibold rounded-xl shadow-lg hover:bg-blue-600 transition-all"
               >
                 Visit

@@ -89,6 +89,22 @@ const ProductDetail = () => {
     return stars;
   };
 
+  // Helper function to check if product has details to show
+  const hasProductDetails = () => {
+    return product.description || 
+           (product.ingredients && product.ingredients.length) || 
+           product.storage || 
+           product.manufacturedBy;
+  };
+
+  // Helper function to check if product has specifications
+  const hasSpecifications = () => {
+    return product.brand || 
+           product.netQuantity || 
+           product.flavor || 
+           product.fragrance;
+  };
+
   return (
     <Layout>
       <div className="container mx-auto p-2 md:p-6 max-w-8xl bg-gray-100">
@@ -113,27 +129,39 @@ const ProductDetail = () => {
           <div className="flex flex-col md:flex-row">
             {/* Left Column - Product Images */}
             <div className="md:w-2/5 p-6">
-              <div className="mb-4 overflow-hidden rounded-lg bg-gray-100">
-                <img
-                  src={productImages[activeImage]}
-                  alt={product.title}
-                  className="w-full h-80 object-contain transform transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-
-              {/* Thumbnail Gallery */}
-              <div className="flex space-x-2 justify-center">
-                {productImages.map((img, index) => (
-                  <div
-                    key={index}
-                    className={`cursor-pointer border-2 rounded-md overflow-hidden w-16 h-16 
-                      ${activeImage === index ? 'border-orange-500' : 'border-gray-200'}`}
-                    onClick={() => setActiveImage(index)}
-                  >
-                    <img src={img} alt={`Thumbnail ${index}`} className="w-full h-full object-cover" />
+              {Array.isArray(productImages) ? (
+                <>
+                  <div className="mb-4 overflow-hidden rounded-lg bg-gray-100">
+                    <img
+                      src={productImages[activeImage]}
+                      alt={product.title}
+                      className="w-full h-80 object-contain transform transition-transform duration-500 hover:scale-105"
+                    />
                   </div>
-                ))}
-              </div>
+                  {productImages.length > 1 && (
+                    <div className="flex space-x-2 justify-center">
+                      {productImages.map((img, index) => (
+                        <div
+                          key={index}
+                          className={`cursor-pointer border-2 rounded-md overflow-hidden w-16 h-16 
+                            ${activeImage === index ? 'border-orange-500' : 'border-gray-200'}`}
+                          onClick={() => setActiveImage(index)}
+                        >
+                          <img src={img} alt={`Thumbnail ${index}`} className="w-full h-full object-cover" />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <div className="mb-4 overflow-hidden rounded-lg bg-gray-100">
+                  <img
+                    src={product.imgSrc}
+                    alt={product.title}
+                    className="w-full h-80 object-contain"
+                  />
+                </div>
+              )}
             </div>
 
             {/* Right Column - Product Details */}
@@ -222,94 +250,151 @@ const ProductDetail = () => {
         {/* Tabs Section */}
         <div className="mt-8">
           <Tabs selectedTabClassName="border-b-2 border-orange-500 text-orange-500">
-            <TabList className="flex border-b border-gray-200 mb-6">
-              <Tab className="px-6 py-3 font-medium text-gray-700 cursor-pointer focus:outline-none">
-                Product Details
-              </Tab>
-
+            <TabList className="flex border-b border-gray-200 mb-6 overflow-x-auto">
+              {hasProductDetails() && (
+                <Tab className="px-6 py-3 font-medium text-gray-700 cursor-pointer focus:outline-none whitespace-nowrap">
+                  Product Details
+                </Tab>
+              )}
+              {product.healthBenefits?.length > 0 && (
+                <Tab className="px-6 py-3 font-medium text-gray-700 cursor-pointer focus:outline-none whitespace-nowrap">
+                  Health Benefits
+                </Tab>
+              )}
+              {product.whyChoose?.length > 0 && (
+                <Tab className="px-6 py-3 font-medium text-gray-700 cursor-pointer focus:outline-none whitespace-nowrap">
+                  Why Choose
+                </Tab>
+              )}
+              {product.nutrition && Object.keys(product.nutrition).length > 0 && (
+                <Tab className="px-6 py-3 font-medium text-gray-700 cursor-pointer focus:outline-none whitespace-nowrap">
+                  Nutrition Facts
+                </Tab>
+              )}
             </TabList>
 
-            <TabPanel>
-              <div className="bg-white rounded-xl shadow-sm p-6 fade-in">
-                <h3 className="text-xl font-semibold mb-4 text-gray-800">Product Details</h3>
-
-                {/* General Description */}
-                {product.description && (
-                  <div className="mb-6">
-                    <h4 className="text-lg font-semibold mb-2 text-gray-700">Description</h4>
-                    <p className="text-gray-600 leading-relaxed">{product.description}</p>
-                  </div>
-                )}
-
-                {/* Ingredients (Only show if available) */}
-                {product.ingredients && product.ingredients.length > 0 && (
-                  <div className="mb-6">
-                    <h4 className="text-lg font-semibold mb-2 text-gray-700">Ingredients</h4>
-                    <ul className="list-disc pl-5 text-gray-600">
-                      {product.ingredients.map((item, index) => (
-                        <li key={index}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {/* Nutrition Facts (Only show if available) */}
-                {product.nutrition && Object.keys(product.nutrition).length > 0 && (
-                  <div className="mb-6">
-                    <h4 className="text-lg font-semibold mb-2 text-gray-700">Nutritional Information</h4>
-                    <ul className="list-disc pl-5 text-gray-600">
-                      {Object.entries(product.nutrition).map(([key, value], index) => (
-                        <li key={index} className="capitalize">{`${key.replace(/([A-Z])/g, " $1")}: ${value}`}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {/* Storage Instructions (Only show if available) */}
-                {product.storage && (
-                  <div className="mb-6">
-                    <h4 className="text-lg font-semibold mb-2 text-gray-700">Storage Instructions</h4>
-                    <p className="text-gray-600">{product.storage}</p>
-                  </div>
-                )}
-
-                {/* Manufacturer Details (Only show if available) */}
-                {product.manufacturedBy && (
-                  <div className="mb-6">
-                    <h4 className="text-sm font-medium mb-2 text-gray-700">Manufactured By</h4>
-                    <p className="text-gray-600">{product.manufacturedBy}</p>
-                  </div>
-                )}
-
-                {/* Expiry & Packaging Details (Only show if available) */}
-                {product.packagedOn && product.useBefore && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="text-sm font-medium mb-2 text-gray-700">Packaged On</h4>
-                      <p className="text-gray-600">{product.packagedOn}</p>
+            {/* Product Details Panel */}
+            {hasProductDetails() && (
+              <TabPanel>
+                <div className="bg-white rounded-xl shadow-sm p-6 fade-in">
+                  {product.description && (
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold mb-2 text-gray-700">Description</h4>
+                      <p className="text-gray-600 leading-relaxed">{product.description}</p>
                     </div>
-                    <div>
-                      <h4 className="text-sm font-medium mb-2 text-gray-700">Best Before</h4>
-                      <p className="text-gray-600">{product.useBefore}</p>
-                    </div>
-                  </div>
-                )}
+                  )}
 
-                {/* GST & Contact Details (Only show if available) */}
-                {product.gst && product.email && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                    <div>
-                      <h4 className="text-sm font-medium mb-2 text-gray-700">GST Number</h4>
-                      <p className="text-gray-600">{product.gst}</p>
+                  {product.ingredients?.length > 0 && (
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold mb-2 text-gray-700">Ingredients</h4>
+                      <ul className="list-disc pl-5 text-gray-600">
+                        {product.ingredients.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
                     </div>
-                    <div>
-                      <h4 className="text-sm font-medium mb-2 text-gray-700">Contact Email</h4>
-                      <p className="text-gray-600">{product.email}</p>
+                  )}
+
+                  {product.storage && (
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold mb-2 text-gray-700">Storage Instructions</h4>
+                      <p className="text-gray-600">{product.storage}</p>
                     </div>
+                  )}
+
+                  {hasSpecifications() && (
+                    <div className="border-t border-gray-100 pt-4 mt-6">
+                      <h4 className="text-lg font-semibold mb-4 text-gray-700">Specifications</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {product.brand && (
+                          <div className="flex">
+                            <span className="font-medium text-gray-500 w-32">Brand:</span>
+                            <span className="text-gray-800">{product.brand}</span>
+                          </div>
+                        )}
+                        {product.netQuantity && (
+                          <div className="flex">
+                            <span className="font-medium text-gray-500 w-32">Net Quantity:</span>
+                            <span className="text-gray-800">{product.netQuantity}</span>
+                          </div>
+                        )}
+                        {product.flavor && (
+                          <div className="flex">
+                            <span className="font-medium text-gray-500 w-32">Flavor:</span>
+                            <span className="text-gray-800">{product.flavor}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </TabPanel>
+            )}
+
+            {/* Health Benefits Panel */}
+            {product.healthBenefits?.length > 0 && (
+              <TabPanel>
+                <div className="bg-white rounded-xl shadow-sm p-6 fade-in">
+                  <h3 className="text-xl font-semibold mb-6 text-gray-800">Health Benefits</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {product.healthBenefits.map((benefit, index) => (
+                      <div key={index} className="flex items-start space-x-3">
+                        <div className="flex-shrink-0 w-5 h-5 mt-1">
+                          <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <p className="text-gray-600">{benefit}</p>
+                      </div>
+                    ))}
                   </div>
-                )}
-              </div>
-            </TabPanel>
+                </div>
+              </TabPanel>
+            )}
+
+            {/* Why Choose Panel */}
+            {product.whyChoose?.length > 0 && (
+              <TabPanel>
+                <div className="bg-white rounded-xl shadow-sm p-6 fade-in">
+                  <h3 className="text-xl font-semibold mb-6 text-gray-800">Why Choose {product.title}</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {product.whyChoose.map((reason, index) => (
+                      <div key={index} className="flex items-start space-x-3">
+                        <div className="flex-shrink-0 w-5 h-5 mt-1">
+                          <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        </div>
+                        <p className="text-gray-600">{reason}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </TabPanel>
+            )}
+
+            {/* Nutrition Facts Panel */}
+            {product.nutrition && Object.keys(product.nutrition).length > 0 && (
+              <TabPanel>
+                <div className="bg-white rounded-xl shadow-sm p-6 fade-in">
+                  <h3 className="text-xl font-semibold mb-6 text-gray-800">Nutrition Facts</h3>
+                  {product.nutrition && (
+                    <div className="border rounded-lg overflow-hidden">
+                      <div className="grid grid-cols-1 divide-y divide-gray-200">
+                        {Object.entries(product.nutrition).map(([key, value], index) => (
+                          <div key={index} className="grid grid-cols-2 p-4 hover:bg-gray-50">
+                            <div className="text-gray-600 capitalize">
+                              {key.replace(/([A-Z])/g, ' $1').trim()}
+                            </div>
+                            <div className="text-gray-900 font-medium">{value}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </TabPanel>
+            )}
           </Tabs>
         </div>
       </div>

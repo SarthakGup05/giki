@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HelmetProvider, Helmet } from 'react-helmet-async';
 import Footer from "./layout/Footer";
 import Navbar from "./layout/Nav";
 import GatewayNavbar from "./layout/gatewaysLayout";
@@ -37,6 +38,9 @@ import ComingSoonPage from "./pages/ComingSoonPage";
 import GiftHome from "./pages/GiftHome";
 import Hampers from "./gikijoyGifts/components/MangoBaskets";
 
+import LoveStoryVilla from "./pages/Gatewaypages/LoveVilla";
+import BedVilla from "./pages/Gatewaypages/3bedVillaa";
+
 // Initialize AOS animations
 AOS.init();
 
@@ -44,7 +48,7 @@ function AppContent() {
   const location = useLocation();
 
   // Determine which navbar to display based on the route
-  const isGatewayRoute = location.pathname.startsWith("/gikijoy-getaway");
+  const isGatewayRoute = location.pathname.startsWith("/getaways");
   const isAquaFarmRoute =
     location.pathname.startsWith("/param-aqua-farm") ||
     location.pathname === "/";
@@ -138,39 +142,47 @@ function AppContent() {
           /> */}
 
           {/* GikiJoy Gateways Routes */}
-          <Route path="/gikijoy-getaway" element={<Gateway />} />
+          <Route path="/getaways" element={<Gateway />} />
           <Route
-            path="/gikijoy-getaway/goa/jungle-villa"
+            path="/getaways/goa/jungle-villa"
             element={<JungleVilla />}
           />
           <Route
-            path="/gikijoy-getaway/uttarakhand/sukoon"
+            path="/getaways/goa/love-villa"
+            element={<LoveStoryVilla />}
+          />
+            <Route
+            path="/getaways/goa/3-bedroom-villa"
+            element={<BedVilla />}
+          />
+          <Route
+            path="/getaways/uttarakhand/sukoon"
             element={<Ranikhet />}
           />
-          <Route path="/gikijoy-getaway/punjab" element={<ChahalFarms />} />
+          <Route path="/getaways/punjab" element={<ChahalFarms />} />
           <Route
-            path="/gikijoy-getaway/uttarakhand/bn"
+            path="/getaways/uttarakhand/bn"
             element={<BNResort />}
           />
           <Route
-            path="/gikijoy-getaway/uttarakhand/ashdale"
+            path="/getaways/uttarakhand/ashdale"
             element={<Ashdale />}
           />
           <Route
-            path="/gikijoy-getaway/uttarakhand/fern"
+            path="/getaways/uttarakhand/fern"
             element={<FernCottage />}
           />
           <Route
-            path="/gikijoy-getaway/uttarakhand/babajiayurveda"
+            path="/getaways/uttarakhand/babajiayurveda"
             element={<BabaAyurveda />}
           />
           <Route
-            path="/gikijoy-getaway/goa/aquabeach"
+            path="/getaways/goa/aquabeach"
             element={<AquaBeach />}
           />
-          <Route path="/gikijoy-getaway/uttarakhand" element={<Uttrakhand />} />
-          <Route path="/gikijoy-getaway/goa" element={<Goa />} />
-          <Route path="/gikijoy-getaway/thankyou" element={<ThankYou />} />
+          <Route path="/getaways/uttarakhand" element={<Uttrakhand />} />
+          <Route path="/getaways/goa" element={<Goa />} />
+          <Route path="/getaways/thankyou" element={<ThankYou />} />
 
           {/* Aqua Farms Routes */}
           <Route path="/param-aqua-farm" element={<Aquafarms />} />
@@ -194,10 +206,33 @@ function AppContent() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <AppContent />
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Helmet>
+          {/* Default SEO tags */}
+          <title>GikiJoy - Premium Experiences & Products</title>
+          <meta name="description" content="Discover GikiJoy - Your destination for premium experiences, products, and stays. Explore our collection of quality products and exceptional stays." />
+          <meta name="keywords" content="GikiJoy, premium products, stays, experiences, mangoes, aqua farms, gateways" />
+          <meta name="author" content="GikiJoy" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          
+          {/* Open Graph / Social Media Meta Tags */}
+          <meta property="og:title" content="GikiJoy - Premium Experiences & Products" />
+          <meta property="og:description" content="Discover GikiJoy - Your destination for premium experiences, products, and stays." />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://gikijoy.com" />
+          <meta property="og:image" content="/assets/images/logo/GikiJoy Logo Black.png" />
+          
+          {/* Twitter Card Meta Tags */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="GikiJoy - Premium Experiences & Products" />
+          <meta name="twitter:description" content="Discover GikiJoy - Your destination for premium experiences, products, and stays." />
+          <meta name="twitter:image" content="/assets/images/logo/GikiJoy Logo Black.png" />
+        </Helmet>
+        <AppContent />
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

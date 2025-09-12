@@ -23,7 +23,7 @@ const FernCottage = () => {
     description:
       "Experience the charm of Fern Cottage in Nainital, nestled amidst breathtaking scenic beauty with panoramic mountain views. Perfect for a peaceful retreat, this property offers spacious accommodations and all modern amenities for a cozy stay.",
     additionalDescription:
-      "With ample parking space and surrounded by nature’s tranquility, Fern Cottage is a serene getaway for families, couples, and travelers seeking comfort and relaxation. Enjoy the picturesque landscapes and a refreshing ambiance away from the city hustle.",
+      "With ample parking space and surrounded by nature’s tranquility, Fern Cottage is a serene getaways for families, couples, and travelers seeking comfort and relaxation. Enjoy the picturesque landscapes and a refreshing ambiance away from the city hustle.",
     location: "Nainital, Uttarakhand",
     whatsappNumber: "7817821976",
     images: [

@@ -25,7 +25,7 @@ const BNResort = () => {
   const property = {
     title: "BN Resort",
     description:
-      "Discover an opulent getaway at BN Resort, featuring stunning architecture and surrounded by picturesque landscapes. Perfect for a peaceful, high-end retreat.",
+      "Discover an opulent getaways at BN Resort, featuring stunning architecture and surrounded by picturesque landscapes. Perfect for a peaceful, high-end retreat.",
     additionalDescription:
       "BN Resort offers a serene environment perfect for those looking to escape the hustle and bustle. Enjoy luxury amenities and breathtaking views.",
     location:

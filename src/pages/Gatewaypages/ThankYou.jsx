@@ -49,12 +49,12 @@ const ThankYou = () => {
         >
           Soon a <span className="font-semibold text-yellow-500">GikiJoy</span>{" "}
           associate will connect and plan your{" "}
-          <span className="italic text-green-500">Getaway</span>!
+          <span className="italic text-green-500">getaways</span>!
         </motion.p>
 
         {/* Button */}
         <motion.button
-          onClick={() => navigate("/gikijoy-getaway")}
+          onClick={() => navigate("/gikijoy-getaways")}
           className="flex items-center space-x-2 px-6 py-3 bg-yellow-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-all duration-300"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}

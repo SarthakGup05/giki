@@ -21,6 +21,15 @@ const TravelGrid = ({ products, category }) => {
     setSelectedProduct(null);
   };
 
+  const handleCardClick = (product, e) => {
+    // Prevent card click if clicking on buttons
+    if (e.target.closest('button') || e.target.closest('a')) {
+      return;
+    }
+    // Navigate to product details
+    window.location.href = product.route;
+  };
+
   return (
     <>
       <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -32,7 +41,8 @@ const TravelGrid = ({ products, category }) => {
           {products.map((product) => (
             <div
               key={product.id}
-              className="relative bg-gray-50 rounded-lg shadow-md transition-transform transform hover:scale-105 overflow-hidden"
+              onClick={(e) => handleCardClick(product, e)}
+              className="relative bg-gray-50 rounded-lg shadow-md transition-transform transform hover:scale-105 overflow-hidden cursor-pointer"
             >
               {/* Image Container */}
               <div className="relative group">
@@ -51,16 +61,20 @@ const TravelGrid = ({ products, category }) => {
                 <p className="text-sm sm:text-base md:text-base text-gray-600 mb-4 line-clamp-3">
                   {product.description}
                 </p>
-                <div className="flex flex-col sm:flex-row justify-between gap-4">
+                <div className="flex flex-col sm:flex-row justify-between gap-4 relative z-10">
                   <button
-                    onClick={() => openModal(product)}
-                    className="bg-red-600 text-yellow-500 font-semibold py-3 px-4 rounded-md transition-transform transform hover:scale-105 text-sm sm:text-base"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      openModal(product);
+                    }}
+                    className="bg-green-600 text-white font-semibold py-3 px-4 rounded-md transition-transform transform hover:scale-105 text-sm sm:text-base"
                   >
                     Book Now
                   </button>
                   <Link
                     to={product.route}
-                    className="bg-black text-yellow-500 font-semibold py-3 px-4 rounded-md transition-transform transform hover:scale-105 text-sm sm:text-base text-center"
+                    onClick={(e) => e.stopPropagation()}
+                    className="bg-blue-600 text-white font-semibold py-3 px-4 rounded-md transition-transform transform hover:scale-105 text-sm sm:text-base text-center"
                   >
                     View Details
                   </Link>

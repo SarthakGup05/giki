@@ -9,6 +9,7 @@ import "lightgallery/css/lg-thumbnail.css";
 import Modal from "../../components/Utils/Modal";
 import BookingForm from "../../components/Utils/BookingForm";
 import { motion } from "framer-motion";
+import JumpingChameleon from "../../components/Utils/JumpingChameleon";
 
 const JungleVilla = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -59,7 +60,7 @@ const JungleVilla = () => {
 
   const property = {
     title: "Discover Your Private Oasis at the Greek Jungle Villa",
-    subtitle: "Your Dream Getaway in the Heart of Nature",
+    subtitle: "Your Dream getaways in the Heart of Nature",
     description:
       "Escape to tranquility at the Greek Jungle Villa, nestled in the serene and secluded area of Siolim, Goa. Located just a stone's throw from the popular Thalasa beach, popular restraunts and Chapora Lane, this villa offers the perfect balance of privacy and convenience. The hustle and bustle of the tourist hotspots is just a short walk away, yet this lush, jungle-surrounded retreat ensures peace, solitude, and complete relaxation. Bachelor's party, family/friends get together, private gatherings or just a quite place to unwind this place is a vacationers paradise.",
     oasisDescription:
@@ -71,7 +72,7 @@ const JungleVilla = () => {
     waterfallDescription:
       "What truly sets the Greek Jungle Villa apart is its in-house waterfall, which comes alive during the monsoon season. Imagine the soothing sound of water cascading gently down a rocky slope, surrounded by jungle life—creating a perfect, peaceful soundtrack for your stay. This natural wonder brings the charm of Goa's tropical monsoon to your doorstep.",
     kitchenDescription:
-      "The villa's open kitchen setup encourages easy and casual dining experiences, whether you're cooking your favorite meals or hiring a local chef to prepare traditional Goan delicacies for you. The villa also features ample space for dining and lounging, perfect for family gatherings, romantic dinners, or a group getaway with friends.",
+      "The villa's open kitchen setup encourages easy and casual dining experiences, whether you're cooking your favorite meals or hiring a local chef to prepare traditional Goan delicacies for you. The villa also features ample space for dining and lounging, perfect for family gatherings, romantic dinners, or a group getaways with friends.",
     location:
       "Greek Jungle Villa, Sy. No. 306/27 Quarem vaddi, Siolim, Goa 403517",
     whatsappNumber: "7817821976",
@@ -91,15 +92,21 @@ const JungleVilla = () => {
       { src: "/assets/images/jungle villa/12.jpg", alt: "Jungle Villa 6" },
       { src: "/assets/images/jungle villa/13.jpg", alt: "Jungle Villa 7" },
       { src: "/assets/images/jungle villa/14.jpg", alt: "Jungle Villa 8" },
+      { src: "/assets/images/jungle villa/15.avif", alt: "Jungle Villa 9" },
+      { src: "/assets/images/jungle villa/16.avif", alt: "Jungle Villa 10" },
+      { src: "/assets/images/jungle villa/17.avif", alt: "Jungle Villa 11" },
+      { src: "/assets/images/jungle villa/18.avif", alt: "Jungle Villa 12" },
+      { src: "/assets/images/jungle villa/19.avif", alt: "Jungle Villa 13" },
+      { src: "/assets/images/jungle villa/20.avif", alt: "Jungle Villa 14" },
     ],
   };
 
   return (
     <>
 
-
+<JumpingChameleon/>
       {/* Hero Section with Main Title */}
-      <div className="relative bg-gradient-to-b from-blue-900 to-blue-800 text-white py-20 px-6">
+      <div className="relative bg-gradient-to-b from-green-600 to-white text-white py-20 px-6 overflow-y-hidden">
         <motion.div
           className="container mx-auto text-center"
           initial="hidden"
@@ -126,7 +133,7 @@ const JungleVilla = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Book Your Dream Getaway
+            Book Your Dream getaways
           </motion.button>
         </motion.div>
         <div className="absolute bottom-0 left-0 w-full overflow-hidden">
@@ -154,7 +161,7 @@ const JungleVilla = () => {
             variants={fadeInLeft}
           >
             <div className="bg-white p-8 rounded-xl shadow-lg">
-              <h2 className="text-3xl font-semibold text-blue-800 mb-6">Your Private Oasis</h2>
+              <h2 className="text-3xl font-semibold text-green-600 mb-6">Your Private Oasis</h2>
               <p className="text-gray-700 text-lg leading-relaxed mb-6">
                 {property.description}
               </p>
@@ -218,7 +225,7 @@ const JungleVilla = () => {
           variants={fadeIn}
         >
           <motion.h2
-            className="text-3xl font-semibold text-blue-800 mb-8 text-center"
+            className="text-3xl font-semibold text-green-600 mb-8 text-center"
             variants={fadeInUp}
           >
             Explore Our Villa
@@ -259,7 +266,7 @@ const JungleVilla = () => {
           variants={fadeIn}
         >
           <motion.h2
-            className="text-3xl font-semibold text-blue-800 mb-8 text-center"
+            className="text-3xl font-semibold text-green-600 mb-8 text-center"
             variants={fadeInUp}
           >
             The Villa Experience
@@ -343,7 +350,7 @@ const JungleVilla = () => {
             className="md:w-1/2"
             variants={fadeInRight}
           >
-            <h2 className="text-3xl font-semibold text-blue-800 mb-6">Bask in the Beauty of Nature</h2>
+            <h2 className="text-3xl font-semibold text-green-800 mb-6">Bask in the Beauty of Nature</h2>
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
               {property.interiorDescription}
             </p>
@@ -352,7 +359,7 @@ const JungleVilla = () => {
 
         {/* Why Choose Us */}
         <motion.div
-          className="bg-blue-900 text-white rounded-xl p-8 md:p-12"
+          className="bg-green-700 text-white rounded-xl p-8 md:p-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
@@ -371,11 +378,11 @@ const JungleVilla = () => {
             {property.highlights.map((highlight, index) => (
               <motion.div
                 key={index}
-                className="bg-blue-800 p-6 rounded-lg shadow-md"
+                className="bg-green-600 p-6 rounded-lg shadow-md"
                 variants={scaleIn}
                 whileHover={{
                   scale: 1.05,
-                  backgroundColor: "rgba(30, 64, 175, 1)"
+                  backgroundColor: "#2d7a4d"
                 }}
                 transition={{ duration: 0.3 }}
               >
@@ -403,10 +410,10 @@ const JungleVilla = () => {
             variants={fadeInLeft}
           >
             <div className="bg-blue-100 p-3 rounded-full">
-              <FaMapMarkerAlt className="text-2xl text-blue-600" />
+              <FaMapMarkerAlt className="text-2xl text-green-600" />
             </div>
             <div>
-              <h3 className="text-2xl font-semibold text-blue-800">Location</h3>
+              <h3 className="text-2xl font-semibold text-green-800">Location</h3>
               <p className="text-lg text-gray-700">{property.location}</p>
             </div>
           </motion.div>
@@ -422,7 +429,7 @@ const JungleVilla = () => {
           variants={fadeIn}
         >
           <motion.h2
-            className="text-3xl font-bold text-blue-800 mb-6"
+            className="text-3xl font-bold text-green-800 mb-6"
             variants={fadeInUp}
           >
             Ready to Experience Paradise?
@@ -452,6 +459,7 @@ const JungleVilla = () => {
       <Modal isOpen={isModalOpen} closeModal={toggleModal}>
         <BookingForm />
       </Modal>
+     
     </>
   );
 };

@@ -59,22 +59,22 @@ const Footer = () => {
             <h5 className="text-xl font-bold mb-4">GikiJoy Getaways</h5>
             <ul>
               <li className="mb-2">
-                <Link className="underline-transition text-white font-medium" to="/gikijoy-getaway/uttarakhand">
+                <Link className="underline-transition text-white font-medium" to="/gikijoy-getaways/uttarakhand">
                   Uttarakhand
                 </Link>
               </li>
               <li>
-                <Link className="underline-transition text-white font-medium" to="/gikijoy-getaway/goa">
+                <Link className="underline-transition text-white font-medium" to="/gikijoy-getaways/goa">
                   Goa
                 </Link>
               </li>
               <li className="mb-2">
-                <Link className="underline-transition text-white font-medium" to="/gikijoy-getaway/punjab">
+                <Link className="underline-transition text-white font-medium" to="/gikijoy-getaways/punjab">
                   Punjab
                 </Link>
               </li>
               <li className="mb-2">
-                <Link className="underline-transition text-white font-medium" to="/gikijoy-getaway">
+                <Link className="underline-transition text-white font-medium" to="/gikijoy-getaways">
                   Uttar Pradesh
                 </Link>
               </li>

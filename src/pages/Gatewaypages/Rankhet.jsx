@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import LightGallery from "lightgallery/react";
 import lgZoom from "lightgallery/plugins/zoom";
+import "lightgallery/css/lightgallery-bundle.css"
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
@@ -30,7 +31,7 @@ const Ranikhet = () => {
     description:
       "Located amidst the tranquil hills of Ranikhet, this property offers breathtaking views and a peaceful retreat.",
     additionalDescription:
-      "Whether you're looking for a weekend getaway or a longer escape, this property provides the perfect balance of comfort and nature.",
+      "Whether you're looking for a weekend getaways or a longer escape, this property provides the perfect balance of comfort and nature.",
     highlights: [
       {
         title: "Mesmerizing Sunsets",
@@ -64,7 +65,10 @@ const Ranikhet = () => {
       { src: "/assets/images/sukoon nature/1.jpg", alt: "Ranikhet Property 1" },
       { src: "/assets/images/sukoon nature/6.jpg", alt: "Ranikhet Property 2" },
       { src: "/assets/images/sukoon nature/3.jpg", alt: "Ranikhet Property 3" },
-      { src: "/assets/images/sukoon nature/5.jpeg", alt: "Ranikhet Property 4" },
+      {
+        src: "/assets/images/sukoon nature/5.jpeg",
+        alt: "Ranikhet Property 4",
+      },
       { src: "/assets/images/sukoon nature/7.jpg", alt: "Ranikhet Property 5" },
     ],
   };
@@ -134,18 +138,23 @@ const Ranikhet = () => {
 
         {/* Image Gallery */}
         <div>
-          <LightGallery plugins={[lgZoom, lgThumbnail]}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {property.images.map((image, index) => (
-                <a key={index} href={image.src}>
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-48 md:h-64 object-cover rounded-lg"
-                  />
-                </a>
-              ))}
-            </div>
+            <LightGallery
+            plugins={[lgZoom]}
+            elementClassNames="grid grid-cols-2 md:grid-cols-3 gap-4"
+          >
+            {property.images.map((image, index) => (
+              <a
+                key={index}
+                href={image.src}
+                className="transform hover:scale-105 transition"
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-48 md:h-72 object-cover rounded-md shadow"
+                />
+              </a>
+            ))}
           </LightGallery>
         </div>
 

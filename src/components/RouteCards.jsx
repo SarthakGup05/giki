@@ -10,7 +10,7 @@ const routes = [
     description:
       "Exclusive getaways with unique experiences, relaxation, and adventure.",
     image: "./assets/images/SliderImages/travel.jpg",
-    route: "/gikijoy-getaway",
+    route: "/getaways",
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ const routes = [
   },
   {
     id: 4,
-    title: "Joy of gifting",
+    title: "Gift of Joy ",
     description: "Gift your loved ones with our exclusive gift hampers.",
     image: "/assets/images/page banner/gift.jpg",
     route: "/gikijoy-gifts",
@@ -48,7 +48,7 @@ const RouteCards = () => {
     <section className="py-16 bg-gray-100">
       <div className="container mx-auto px-6 md:px-12 text-center">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">
-          Welcome to GikiJoy
+          Explore Our Pathways
         </h2>
         {/* <p className="text-lg text-gray-600 max-w-xl mx-auto mb-12">
           Discover GikiJoy Farms and GikiJoy Getaways for authentic experiences
@@ -76,7 +76,7 @@ const RouteCards = () => {
 
               {/* Text Content */}
               <div className="absolute bottom-0 left-0 right-0 p-6 text-left text-white line-break">
-                <h3 className="text-xl font-semibold mt-20">{route.title}</h3>
+                <h3 className="text-xl font-semibold mt-20 capitalize">{route.title}</h3>
                 {/* {route.description && (
                   <p
                     className="text-sm mt-4"
